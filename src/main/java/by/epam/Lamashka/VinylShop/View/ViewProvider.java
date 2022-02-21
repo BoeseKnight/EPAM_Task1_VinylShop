@@ -1,0 +1,20 @@
+package by.epam.Lamashka.VinylShop.View;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class ViewProvider {
+    private Map<String,View> views=new HashMap<>();
+
+    public ViewProvider() {
+        views.put("1", new AuthorizationView());
+        views.put("2", new RegistrationView());
+        views.put("3", new CustomerView());
+        views.put("4", new AdminView());
+    }
+    public View getView(String option){
+        return views.get(option);
+    }
+}
