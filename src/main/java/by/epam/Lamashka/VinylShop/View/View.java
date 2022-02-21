@@ -1,13 +1,15 @@
 package by.epam.Lamashka.VinylShop.View;
 
 import by.epam.Lamashka.VinylShop.Controller.Controller;
+import javafx.util.Pair;
 
 public abstract class View {
-  protected String response;
-  protected Controller controller;
+  protected Pair<String, View> response;
+  protected Controller controller=new Controller();
   protected String options[];
 
-  public abstract void show();
+  public View() {
+  }
 
   protected void printOptions() {
     for (String option : options) {
@@ -15,7 +17,11 @@ public abstract class View {
     }
   }
 
-  public View(Controller controller) {
-    this.controller = controller;
-  }
+  public abstract View show();
+
+  protected abstract String userDataInput();
+
+
+
+
 }

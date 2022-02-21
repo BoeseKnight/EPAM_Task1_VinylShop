@@ -15,46 +15,51 @@ public class Menu {
   private static Controller controller = new Controller();
 
   public static void run() {
+    ViewProvider viewProvider=new ViewProvider();
     Integer option = userOptionsInput();
-  }
-
-  private static void authorization() {
-    String commandParameters;
-    int choice = -1;
-    while (choice != 0
-        && response
-            != "LogIn passed successfully" /*&& response!="Registration passed successfully"*/) {
-      try {
-        printMenu();
-        choice = in.nextInt();
-        switch (choice) {
-          case 1:
-            commandParameters = userDataInput();
-            System.out.println(
-                response = controller.executeCommand(CommandName.LOGIN, commandParameters));
-
-            break;
-          case 2:
-            commandParameters = userDataInput();
-            System.out.println(
-                response = controller.executeCommand(CommandName.REGISTER, commandParameters));
-            break;
-          case 3:
-            commandParameters = userDataInput();
-            System.out.println(
-                response =
-                    controller.executeCommand(CommandName.PASSWORD_CHANGE, commandParameters));
-
-            break;
-          case 0:
-            exit(0);
-        }
-      } catch (Exception ex) {
-        System.out.println("Enter an integer value between 0-" + (options.length - 1));
-        in.next();
-      }
+    View view=viewProvider.getView(option).show();
+    while(view!=null){
+      view.show();
     }
   }
+
+//  private static void authorization() {
+//    String commandParameters;
+//    int choice = -1;
+//    while (choice != 0
+//        && response
+//            != "LogIn passed successfully" /*&& response!="Registration passed successfully"*/) {
+//      try {
+//        printMenu();
+//        choice = in.nextInt();
+//        switch (choice) {
+//          case 1:
+//            commandParameters = userDataInput();
+//            System.out.println(
+//                response = controller.executeCommand(CommandName.LOGIN, commandParameters));
+//
+//            break;
+//          case 2:
+//            commandParameters = userDataInput();
+//            System.out.println(
+//                response = controller.executeCommand(CommandName.REGISTER, commandParameters));
+//            break;
+//          case 3:
+//            commandParameters = userDataInput();
+//            System.out.println(
+//                response =
+//                    controller.executeCommand(CommandName.PASSWORD_CHANGE, commandParameters));
+//
+//            break;
+//          case 0:
+//            exit(0);
+//        }
+//      } catch (Exception ex) {
+//        System.out.println("Enter an integer value between 0-" + (options.length - 1));
+//        in.next();
+//      }
+//    }
+//  }
 
   private static String userDataInput() {
     System.out.println("Enter an Email.");

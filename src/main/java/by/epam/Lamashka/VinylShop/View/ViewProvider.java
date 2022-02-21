@@ -10,14 +10,14 @@ import java.util.Map;
 public class ViewProvider {
   private Map<Integer, View> views = new HashMap<>();
 
-  public ViewProvider(Controller controller) {
-    views.put(1, new AuthorizationView(controller));
-    views.put(2, new RegistrationView(controller));
-    views.put(3, new CustomerView(controller));
-    views.put(4, new AdminView(controller));
+  public ViewProvider() {
+    views.put(1, new AuthorizationView());
+    views.put(2, new RegistrationView());
+    views.put(3, new CustomerView());
+    views.put(4, new AdminView());
   }
 
-  public View getView(String option) {
+  public View getView(Integer option) {
     return views.get(option);
   }
 }
