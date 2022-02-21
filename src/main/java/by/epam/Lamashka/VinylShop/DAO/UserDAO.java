@@ -7,32 +7,30 @@ import java.util.Collection;
 import java.util.List;
 
 public class UserDAO implements DAO<User> {
-    private final static List<User> users = new ArrayList<>();
+  private static final List<User> users = new ArrayList<>();
 
-    @Override
-    public void update(User user) {
-        users.set(users.indexOf(user), user);
-    }
+  @Override
+  public void update(User user) {
+    users.set(users.indexOf(user), user);
+  }
 
-    @Override
-    public void delete(User user) {
-        users.remove(user);
-    }
+  @Override
+  public void delete(User user) {
+    users.remove(user);
+  }
 
-    @Override
-    public void save(User user) {
-        users.add(user);
-    }
+  @Override
+  public void save(User user) {
+    users.add(user);
+  }
 
-    @Override
-    public Collection<User> getAll() {
-        return users;
-    }
+  @Override
+  public Collection<User> getAll() {
+    return users;
+  }
 
-    @Override
-    public User get(int id) {
-        return users.get(id);
-    }
-
-
+  @Override
+  public User get(int id) {
+    return users.get(id);
+  }
 }

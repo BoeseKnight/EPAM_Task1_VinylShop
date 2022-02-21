@@ -10,19 +10,19 @@ import by.epam.Lamashka.VinylShop.View.ViewProvider;
 
 public class Main {
 
-    public static void main(String[] args) {
-//        Controller controller = new Controller();
-//        ViewProvider viewProvider = new ViewProvider(controller);
-//        viewProvider.getView("1").show();
-//        Product product = new VinylProduct();
-//        VinylProduct vinylProduct = (VinylProduct) product;
-//        System.out.println(product);
-//        for (UserRole a : UserRole.values()) {
-//            System.out.println(a);
-//        }
-//        Menu.run();
-//        ViewProvider viewProvider= new ViewProvider();
-//        viewProvider.getView("3").show();
-//        view.show();
-    }
+  public static void main(String[] args) {
+    //        Controller controller = new Controller();
+    //        ViewProvider viewProvider = new ViewProvider(controller);
+    //        viewProvider.getView("1").show();
+    //        Product product = new VinylProduct();
+    //        VinylProduct vinylProduct = (VinylProduct) product;
+    //        System.out.println(product);
+    //        for (UserRole a : UserRole.values()) {
+    //            System.out.println(a);
+    //        }
+    Menu.run();
+    //        ViewProvider viewProvider= new ViewProvider();
+    //        viewProvider.getView("3").show();
+    //        view.show();
+  }
 }
