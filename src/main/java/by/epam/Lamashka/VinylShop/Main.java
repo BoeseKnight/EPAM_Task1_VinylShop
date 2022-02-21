@@ -20,7 +20,8 @@ public class Main {
     //        for (UserRole a : UserRole.values()) {
     //            System.out.println(a);
     //        }
-    Menu.run();
+    Menu menu = new Menu();
+    menu.show();
     //        ViewProvider viewProvider= new ViewProvider();
     //        viewProvider.getView("3").show();
     //        view.show();

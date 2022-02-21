@@ -5,11 +5,10 @@ import javafx.util.Pair;
 
 public abstract class View {
   protected Pair<String, View> response;
-  protected Controller controller=new Controller();
+  protected Controller controller = new Controller();
   protected String options[];
 
-  public View() {
-  }
+  public View() {}
 
   protected void printOptions() {
     for (String option : options) {
@@ -20,8 +19,4 @@ public abstract class View {
   public abstract View show();
 
   protected abstract String userDataInput();
-
-
-
-
 }
