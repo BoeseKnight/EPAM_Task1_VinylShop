@@ -1,12 +1,6 @@
 package by.epam.Lamashka.VinylShop;
 
-import by.epam.Lamashka.VinylShop.Controller.Controller;
-import by.epam.Lamashka.VinylShop.Entitiy.Product;
-import by.epam.Lamashka.VinylShop.Entitiy.UserRole;
-import by.epam.Lamashka.VinylShop.Entitiy.VinylProduct;
-import by.epam.Lamashka.VinylShop.View.Menu;
-import by.epam.Lamashka.VinylShop.View.View;
-import by.epam.Lamashka.VinylShop.View.ViewProvider;
+import by.epam.Lamashka.VinylShop.view.Menu;
 
 public class Main {
 
