@@ -4,8 +4,6 @@ import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class User {
-  private static final AtomicInteger count = new AtomicInteger(-1);
-  private final int id;
   private String password;
   private String emailAddress;
   private UserRole role;
@@ -13,11 +11,6 @@ public class User {
   public User(String emailAddress, String password) {
     this.password = password;
     this.emailAddress = emailAddress;
-    id = count.incrementAndGet();
-  }
-
-  public int getId() {
-    return id;
   }
 
   public String getPassword() {
