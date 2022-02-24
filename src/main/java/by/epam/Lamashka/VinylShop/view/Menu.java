@@ -7,7 +7,6 @@ import java.util.regex.Pattern;
 
 public class Menu extends View {
   private static String response;
-  private static Scanner in = new Scanner(System.in);
   private static String options[] = {"1-LOGIN", "2-REGISTER", "3-CHANGE PASSWORD", "0-EXIT"};
   private static Controller controller = new Controller();
 
@@ -62,6 +61,7 @@ public class Menu extends View {
   //  }
   @Override
   protected String userDataInput() {
+    Scanner in = new Scanner(System.in);
     System.out.println("Enter an Email.");
     String email = in.next();
     while (!Pattern.matches("^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$", email)) {
@@ -80,6 +80,7 @@ public class Menu extends View {
   }
 
   private static Integer userOptionsInput() {
+    Scanner in = new Scanner(System.in);
     int choice = -1;
     boolean correctChoice = false;
     while (choice != 0 && !correctChoice) {
