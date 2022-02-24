@@ -25,7 +25,6 @@ public class Menu extends View {
 
     return null;
   }
-
   //  private static void authorization() {
   //    String commandParameters;
   //    int choice = -1;

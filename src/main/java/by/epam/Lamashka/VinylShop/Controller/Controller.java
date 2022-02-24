@@ -10,8 +10,6 @@ public class Controller {
   private final CommandExecutor commandExecutor = new CommandExecutor();
 
   public Pair<String, View> executeCommand(CommandName commandName, String parameters) {
-    Command command;
-    command = commandExecutor.getCommand(commandName);
-    return command.execute(parameters);
+    return commandExecutor.getCommand(commandName).execute(parameters);
   }
 }
