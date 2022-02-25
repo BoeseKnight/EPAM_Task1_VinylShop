@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 
 public class Main {
   private static Logger logger = LogManager.getLogger(Main.class);
+
   public static void main(String[] args) {
     Menu menu = new Menu();
     menu.show();
@@ -20,8 +21,8 @@ public class Main {
       e.printStackTrace();
     }
     logger.info("shit");
-//    logger.debug("shit");
-//    logger.error("shit");
+    //    logger.debug("shit");
+    //    logger.error("shit");
 
   }
 }

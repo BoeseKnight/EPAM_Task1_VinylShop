@@ -11,19 +11,19 @@ import java.util.Scanner;
 public class ProductsInitializer implements Initializer {
   @Override
   public void initialize() throws FileNotFoundException {
-    DAO<Song> songs=new SongDAO();
+    DAO<Song> songs = new SongDAO();
     Scanner in = new Scanner(new File("Products.txt"));
     in.useDelimiter("-|\\r?\\n");
     String name;
     String artist;
     String duration;
     while (in.hasNext()) {
-      name=in.next();
-      artist=in.next();
-      duration=in.next();
+      name = in.next();
+      artist = in.next();
+      duration = in.next();
       songs.save(new Song(name, artist, duration));
     }
-    for(Song song : songs.getAll()){
+    for (Song song : songs.getAll()) {
       System.out.println(song);
     }
   }

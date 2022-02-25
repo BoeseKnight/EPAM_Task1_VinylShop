@@ -2,14 +2,12 @@ package by.epam.Lamashka.VinylShop.dao;
 
 import by.epam.Lamashka.VinylShop.DataSource;
 import by.epam.Lamashka.VinylShop.entity.Song;
-import by.epam.Lamashka.VinylShop.entity.User;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 public class SongDAO implements DAO<Song> {
-  private static final List<Song> songs = DataSource.getInstanse().getSongs();
+  private static final List<Song> songs = DataSource.getInstance().getSongs();
 
   @Override
   public void update(Song song) {

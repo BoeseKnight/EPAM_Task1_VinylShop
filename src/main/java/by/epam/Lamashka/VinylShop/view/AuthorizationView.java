@@ -25,15 +25,6 @@ public class AuthorizationView extends View {
 
   @Override
   protected String userDataInput() {
-    Scanner in = new Scanner(System.in);
-    logger.info("Enter an Email.");
-    String email = in.next();
-    while (!Pattern.matches("^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$", email)) {
-      logger.info("Incorrect Email format. Try again.");
-      email = in.next();
-    }
-    logger.info("Enter a Password.");
-    String password = in.next();
-    return email + " " + password;
+    return EmailPasswordInput.userInput();
   }
 }

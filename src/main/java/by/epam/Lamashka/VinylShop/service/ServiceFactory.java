@@ -5,7 +5,8 @@ public class ServiceFactory {
   private final UserService userService = new UserService();
 
   private ServiceFactory() {}
-  public static ServiceFactory getInstance(){
+
+  public static ServiceFactory getInstance() {
     return instance;
   }
 

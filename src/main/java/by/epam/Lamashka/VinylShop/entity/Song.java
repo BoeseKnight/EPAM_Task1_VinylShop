@@ -47,10 +47,16 @@ public class Song {
 
   @Override
   public String toString() {
-    return "Song{" +
-            "songName='" + songName + '\'' +
-            ", artist='" + artist + '\'' +
-            ", songDuration='" + songDuration + '\'' +
-            '}';
+    return "Song{"
+        + "songName='"
+        + songName
+        + '\''
+        + ", artist='"
+        + artist
+        + '\''
+        + ", songDuration='"
+        + songDuration
+        + '\''
+        + '}';
   }
 }

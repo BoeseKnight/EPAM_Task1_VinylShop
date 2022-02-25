@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 public class LoginCommand implements Command {
   private final UserService userService = new UserService();
+
   @Override
   public Pair<String, View> execute(String parameters) {
     String[] params = parameters.split(" ");
@@ -17,8 +18,7 @@ public class LoginCommand implements Command {
     String password = params[1];
     if (userService.login(email, password) == null) {
       return new Pair<>(
-          "You have entered either your email address or password incorrectly.",
-          new Menu());
+          "You have entered either your email address or password incorrectly.", new Menu());
     } else {
       return new Pair<>("LogIn passed successfully", new AuthorizationView());
     }

@@ -1,15 +1,14 @@
 package by.epam.Lamashka.VinylShop.dao;
 
 import by.epam.Lamashka.VinylShop.DataSource;
-import by.epam.Lamashka.VinylShop.entity.User;
 import by.epam.Lamashka.VinylShop.entity.VinylProduct;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 public class VinylProductDAO implements DAO<VinylProduct> {
-  private static final List<VinylProduct> vinylProducts = DataSource.getInstanse().getVinylProducts();
+  private static final List<VinylProduct> vinylProducts =
+      DataSource.getInstance().getVinylProducts();
 
   @Override
   public void update(VinylProduct vinylProduct) {

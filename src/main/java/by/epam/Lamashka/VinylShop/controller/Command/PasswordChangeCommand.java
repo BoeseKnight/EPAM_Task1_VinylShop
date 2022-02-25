@@ -13,7 +13,8 @@ public class PasswordChangeCommand implements Command {
     String[] params = parameters.split(" ");
     String email = params[0];
     String password = params[1];
-//    System.out.println("CHANGE Command was executed. Parameters: " + params[0] + " " + params[1]);
+    //    System.out.println("CHANGE Command was executed. Parameters: " + params[0] + " " +
+    // params[1]);
 
     if (userService.changePassword(email, password) == null) {
       return new Pair<>("SMTH WRONG", new AuthorizationView());

@@ -8,40 +8,41 @@ import java.util.List;
 import java.util.Map;
 
 public class DataSource {
-    private final static DataSource instanse=new DataSource();
-    private final List<User> users = new ArrayList<>();
-    private final List<Song> songs = new ArrayList<>();
-    private final List<VinylRecord> vinylRecords = new ArrayList<>();
-    private final List<VinylProduct> vinylProducts = new ArrayList<>();
-    private final List<Order> orders = new ArrayList<>();
-    private final Map<String, Basket> baskets = new HashMap<>();
-    private DataSource(){}
+  private static final DataSource instance = new DataSource();
+  private final List<User> users = new ArrayList<>();
+  private final List<Song> songs = new ArrayList<>();
+  private final List<VinylRecord> vinylRecords = new ArrayList<>();
+  private final List<VinylProduct> vinylProducts = new ArrayList<>();
+  private final List<Order> orders = new ArrayList<>();
+  private final Map<String, Basket> baskets = new HashMap<>();
 
-    public static DataSource getInstanse() {
-        return instanse;
-    }
+  private DataSource() {}
 
-    public List<Song> getSongs() {
-        return songs;
-    }
+  public static DataSource getInstance() {
+    return instance;
+  }
 
-    public List<User> getUsers() {
-        return users;
-    }
+  public List<Song> getSongs() {
+    return songs;
+  }
 
-    public List<Order> getOrders() {
-        return orders;
-    }
+  public List<User> getUsers() {
+    return users;
+  }
 
-    public List<VinylRecord> getVinylRecords() {
-        return vinylRecords;
-    }
+  public List<Order> getOrders() {
+    return orders;
+  }
 
-    public List<VinylProduct> getVinylProducts() {
-        return vinylProducts;
-    }
+  public List<VinylRecord> getVinylRecords() {
+    return vinylRecords;
+  }
 
-    public Map<String, Basket> getBaskets() {
-        return baskets;
-    }
+  public List<VinylProduct> getVinylProducts() {
+    return vinylProducts;
+  }
+
+  public Map<String, Basket> getBaskets() {
+    return baskets;
+  }
 }
