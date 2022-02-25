@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class SongDAO implements DAO<Song> {
-  private List<Song> songs = new ArrayList<>();
+  private static final List<Song> songs = new ArrayList<>();
 
   @Override
   public void update(Song song) {

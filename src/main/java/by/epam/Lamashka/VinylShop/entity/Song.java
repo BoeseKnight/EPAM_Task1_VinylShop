@@ -15,9 +15,10 @@ public class Song {
     this.songDuration = "00:00";
   }
 
-  public Song(String songName, String songDuration) {
+  public Song(String songName, String artist, String songDuration) {
     this.songName = songName;
     this.songDuration = songDuration;
+    this.artist = artist;
   }
 
   public String getSongName() {
@@ -44,4 +45,12 @@ public class Song {
     this.artist = artist;
   }
 
+  @Override
+  public String toString() {
+    return "Song{" +
+            "songName='" + songName + '\'' +
+            ", artist='" + artist + '\'' +
+            ", songDuration='" + songDuration + '\'' +
+            '}';
+  }
 }

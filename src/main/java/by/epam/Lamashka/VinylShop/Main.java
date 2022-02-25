@@ -11,11 +11,11 @@ public class Main {
   public static void main(String[] args) {
     Menu menu = new Menu();
     menu.show();
-//    Initializer products = new ProductsInitializer();
-//    try {
-//      products.initialize();
-//    } catch (FileNotFoundException e) {
-//      e.printStackTrace();
-//    }
+    Initializer products = new ProductsInitializer();
+    try {
+      products.initialize();
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    }
   }
 }
