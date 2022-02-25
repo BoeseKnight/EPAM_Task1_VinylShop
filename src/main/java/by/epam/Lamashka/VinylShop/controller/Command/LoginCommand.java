@@ -5,10 +5,11 @@ import by.epam.Lamashka.VinylShop.view.AuthorizationView;
 import by.epam.Lamashka.VinylShop.view.Menu;
 import by.epam.Lamashka.VinylShop.view.View;
 import javafx.util.Pair;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class LoginCommand implements Command {
   private final UserService userService = new UserService();
-
   @Override
   public Pair<String, View> execute(String parameters) {
     String[] params = parameters.split(" ");
