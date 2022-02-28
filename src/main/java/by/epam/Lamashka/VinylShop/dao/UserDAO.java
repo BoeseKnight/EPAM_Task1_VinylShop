@@ -33,4 +33,20 @@ public class UserDAO implements DAO<User> {
   public User get(int id) {
     return users.get(id);
   }
+
+  public User findByEmail(String email) {
+    User userToFind =
+        users.stream().filter(user -> email.equals(user.getEmailAddress())).findAny().orElse(null);
+    return userToFind;
+  }
+
+  public User findByEmailAndPassword(String email, String password) {
+    User userToFind =
+        users.stream()
+            .filter(
+                user -> email.equals(user.getEmailAddress()) && password.equals(user.getPassword()))
+            .findAny()
+            .orElse(null);
+    return userToFind;
+  }
 }

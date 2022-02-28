@@ -15,4 +15,14 @@ public class AdminView extends View {
   protected String userDataInput() {
     return null;
   }
+
+  @Override
+  protected void printOptions() {
+    super.printOptions();
+  }
+
+  @Override
+  protected Integer userOptionsInput() {
+    return null;
+  }
 }

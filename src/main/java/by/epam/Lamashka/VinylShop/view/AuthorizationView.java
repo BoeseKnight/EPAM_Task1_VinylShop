@@ -16,7 +16,13 @@ public class AuthorizationView extends View {
   }
 
   @Override
+  protected Integer userOptionsInput() {
+    return null;
+  }
+
+  @Override
   public View show() {
+    logger.info("LOGIN MENU");
     String commandParameters = userDataInput();
     response = controller.executeCommand(CommandName.LOGIN, commandParameters);
     logger.info(response.getKey());

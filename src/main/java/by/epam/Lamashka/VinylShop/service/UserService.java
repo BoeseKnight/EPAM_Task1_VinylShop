@@ -1,21 +1,24 @@
 package by.epam.Lamashka.VinylShop.service;
 
+import by.epam.Lamashka.VinylShop.DataSource;
 import by.epam.Lamashka.VinylShop.dao.DAO;
+import by.epam.Lamashka.VinylShop.dao.DAOFactory;
 import by.epam.Lamashka.VinylShop.dao.UserDAO;
 import by.epam.Lamashka.VinylShop.entity.User;
 
+import java.util.List;
+
 public class UserService {
-  private static final DAO<User> userDAO = new UserDAO();
+  private static final UserDAO userDAO = DAOFactory.getInstance().getUserDAO();
 
   public User login(String email, String password) {
-    UserDAO userDAOImpl = (UserDAO) userDAO;
-    User user = findByEmailAndPassword(email, password);
+    User user = userDAO.findByEmailAndPassword(email, password);
     return user;
   }
 
   public User register(String email, String password) {
     UserDAO userDAOImpl = (UserDAO) userDAO;
-    User user = findByEmail(email);
+    User user = userDAO.findByEmail(email);
     if (user != null) {
       return null;
     } else {
@@ -25,8 +28,7 @@ public class UserService {
   }
 
   public User changePassword(String email, String password) {
-    UserDAO userDAOImpl = (UserDAO) userDAO;
-    User user = findByEmail(email);
+    User user = userDAO.findByEmail(email);
     if (user != null) {
       user.setPassword(password);
       userDAO.update(user);
@@ -35,31 +37,12 @@ public class UserService {
   }
 
   public User changeEmail(String email, String password) {
-    UserDAO userDAOImpl = (UserDAO) userDAO;
-    User user = findByEmail(email);
+
+    User user = userDAO.findByEmail(email);
     if (user != null) {
-      user.setPassword(password);
+      user.setEmailAddress(email);
       userDAO.update(user);
       return user;
     } else return null;
-  }
-
-  public User findByEmail(String email) {
-    User userToFind =
-        userDAO.getAll().stream()
-            .filter(user -> email.equals(user.getEmailAddress()))
-            .findAny()
-            .orElse(null);
-    return userToFind;
-  }
-
-  public User findByEmailAndPassword(String email, String password) {
-    User userToFind =
-        userDAO.getAll().stream()
-            .filter(
-                user -> email.equals(user.getEmailAddress()) && password.equals(user.getPassword()))
-            .findAny()
-            .orElse(null);
-    return userToFind;
   }
 }

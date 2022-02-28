@@ -15,14 +15,26 @@ public class RegistrationView extends View {
 
   @Override
   public View show() {
+    logger.info("REGISTRATION MENU");
     String commandParameters = userDataInput();
     response = controller.executeCommand(CommandName.REGISTER, commandParameters);
-    System.out.println(response.getKey());
+    logger.info(response.getKey());
     return response.getValue();
+  }
+
+  @Override
+  protected void printOptions() {
+    super.printOptions();
+  }
+
+  @Override
+  protected Integer userOptionsInput() {
+    return null;
   }
 
   @Override
   protected String userDataInput() {
     return EmailPasswordInput.userInput();
   }
+
 }

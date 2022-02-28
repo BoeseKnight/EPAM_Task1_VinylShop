@@ -2,6 +2,7 @@ package by.epam.Lamashka.VinylShop.controller.Command;
 
 import by.epam.Lamashka.VinylShop.service.UserService;
 import by.epam.Lamashka.VinylShop.view.AuthorizationView;
+import by.epam.Lamashka.VinylShop.view.CustomerView;
 import by.epam.Lamashka.VinylShop.view.Menu;
 import by.epam.Lamashka.VinylShop.view.View;
 import javafx.util.Pair;
@@ -20,7 +21,7 @@ public class LoginCommand implements Command {
       return new Pair<>(
           "You have entered either your email address or password incorrectly.", new Menu());
     } else {
-      return new Pair<>("LogIn passed successfully", new AuthorizationView());
+      return new Pair<>("LogIn passed successfully", new CustomerView());
     }
   }
 }

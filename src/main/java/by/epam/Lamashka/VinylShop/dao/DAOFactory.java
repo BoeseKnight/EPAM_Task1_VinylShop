@@ -9,7 +9,7 @@ import by.epam.Lamashka.VinylShop.service.UserService;
 
 public class DAOFactory {
   private static final DAOFactory instance = new DAOFactory();
-  private final DAO<User> userDAO = new UserDAO();
+  private final UserDAO userDAO = new UserDAO();
   private final DAO<Song> songDAO = new SongDAO();
   private final DAO<VinylRecord> vinylRecordDAO = new VinylRecordDAO();
   private final DAO<VinylProduct> vinylProductDAO = new VinylProductDAO();
@@ -20,7 +20,7 @@ public class DAOFactory {
     return instance;
   }
 
-  public DAO<User> getUserDAO() {
+  public UserDAO getUserDAO() {
     return userDAO;
   }
 

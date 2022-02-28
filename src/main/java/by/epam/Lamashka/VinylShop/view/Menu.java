@@ -5,11 +5,16 @@ import by.epam.Lamashka.VinylShop.controller.Controller;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+import static java.lang.Integer.parseInt;
+
 public class Menu extends View {
   private static Scanner in = new Scanner(System.in);
   private static String response;
-  private static String options[] = {"1-LOGIN", "2-REGISTER", "3-CHANGE PASSWORD", "0-EXIT"};
   private static Controller controller = new Controller();
+
+  public Menu() {
+    options = new String[] {"1-LOGIN", "2-REGISTER", "0-EXIT"};
+  }
 
   public View show() {
     ViewProvider viewProvider = new ViewProvider();
@@ -73,26 +78,21 @@ public class Menu extends View {
     return email + " " + password;
   }
 
-  private static void printMenu() {
-    for (String option : options) {
-      System.out.println(option);
-    }
-  }
+  @Override
+  protected Integer userOptionsInput() {
 
-  private static Integer userOptionsInput() {
-
-    int choice = -1;
+    String choice = "";
     boolean correctChoice = false;
-    while (choice != 0 && !correctChoice) {
+    while (choice != "0" && !correctChoice) {
       try {
-        printMenu();
-        choice = in.nextInt();
+        printOptions();
+        choice = in.next("[0-3]");
         correctChoice = true;
       } catch (Exception ex) {
         System.out.println("Enter an integer value between 0-" + (options.length - 1));
         in.next();
       }
     }
-    return choice;
+    return parseInt(choice);
   }
 }

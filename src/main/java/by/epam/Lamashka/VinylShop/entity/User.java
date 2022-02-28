@@ -1,8 +1,10 @@
 package by.epam.Lamashka.VinylShop.entity;
 
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class User {
+  private static final AtomicInteger count = new AtomicInteger(0);
   private String password;
   private String emailAddress;
   private UserRole role;
@@ -10,6 +12,11 @@ public class User {
   public User(String emailAddress, String password) {
     this.password = password;
     this.emailAddress = emailAddress;
+    count.incrementAndGet();
+  }
+
+  public static AtomicInteger getCount() {
+    return count;
   }
 
   public String getPassword() {

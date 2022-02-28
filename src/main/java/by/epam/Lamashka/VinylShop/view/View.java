@@ -19,4 +19,5 @@ public abstract class View {
   public abstract View show();
 
   protected abstract String userDataInput();
+  protected abstract Integer userOptionsInput();
 }
