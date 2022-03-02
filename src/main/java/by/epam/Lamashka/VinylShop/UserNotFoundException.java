@@ -1,7 +1,7 @@
 package by.epam.Lamashka.VinylShop;
 
-public class UserNotFoundException extends Exception{
-    public UserNotFoundException(String message) {
-        super(message);
-    }
+public class UserNotFoundException extends Exception {
+  public UserNotFoundException(String message) {
+    super(message);
+  }
 }

@@ -1,5 +1,6 @@
 package by.epam.Lamashka.VinylShop.controller.Command;
 
+import by.epam.Lamashka.VinylShop.service.ServiceFactory;
 import by.epam.Lamashka.VinylShop.service.UserService;
 import by.epam.Lamashka.VinylShop.view.AuthorizationView;
 import by.epam.Lamashka.VinylShop.view.CustomerView;
@@ -10,7 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class LoginCommand implements Command {
-  private final UserService userService = new UserService();
+  private final UserService userService = ServiceFactory.getInstance().getUserService();
 
   @Override
   public Pair<String, View> execute(String parameters) {

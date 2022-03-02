@@ -1,12 +1,19 @@
 package by.epam.Lamashka.VinylShop.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class User {
+public class User implements Serializable, Comparable<User> {
   private static final AtomicInteger count = new AtomicInteger(0);
   private String password;
   private String emailAddress;
+
+  @Override
+  public int compareTo(User o) {
+    return password.compareTo(o.getEmailAddress());
+  }
+
   private UserRole role;
 
   public User(String emailAddress, String password) {
@@ -59,11 +66,11 @@ public class User {
   @Override
   public String toString() {
     return "User{"
-        + "password='"
-        + password
-        + '\''
         + ", emailAddress='"
         + emailAddress
+        + '\''
+        + "password='"
+        + password
         + '\''
         + '}';
   }

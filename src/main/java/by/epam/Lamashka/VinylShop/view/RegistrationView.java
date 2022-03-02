@@ -11,6 +11,7 @@ public class RegistrationView extends View {
   public RegistrationView() {
     options = new String[] {"1-ENTER LOGIN", "2-ENTER PASSWORD"};
   }
+
   private static Logger logger = LogManager.getLogger(AuthorizationView.class);
 
   @Override
@@ -36,5 +37,4 @@ public class RegistrationView extends View {
   protected String userDataInput() {
     return EmailPasswordInput.userInput();
   }
-
 }

@@ -7,17 +7,18 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class EmailPasswordInput {
-    private static Logger logger= LogManager.getLogger(EmailPasswordInput.class);
-    private static Scanner in = new Scanner(System.in);
-    public static String userInput(){
-        logger.info("ENTER AN EMAIL");
-        String email = in.next();
-        while (!Pattern.matches("^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$", email)) {
-            logger.info("Incorrect Email format. Try again.");
-            email = in.next();
-        }
-        logger.info("ENTER A PASSWORD");
-        String password = in.next();
-        return email + " " + password;
+  private static Logger logger = LogManager.getLogger(EmailPasswordInput.class);
+  private static Scanner in = new Scanner(System.in);
+
+  public static String userInput() {
+    logger.info("ENTER AN EMAIL");
+    String email = in.next();
+    while (!Pattern.matches("^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$", email)) {
+      logger.info("Incorrect Email format. Try again.");
+      email = in.next();
     }
+    logger.info("ENTER A PASSWORD");
+    String password = in.next();
+    return email + " " + password;
+  }
 }

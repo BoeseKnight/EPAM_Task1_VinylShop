@@ -11,6 +11,14 @@ public class CommandProvider {
     commands.put(CommandName.LOGIN, new LoginCommand());
     commands.put(CommandName.REGISTER, new RegisterCommand());
     commands.put(CommandName.PASSWORD_CHANGE, new PasswordChangeCommand());
+    commands.put(CommandName.EMAIL_CHANGE, new EmailChangeCommand());
+    commands.put(CommandName.ADD_PRODUCT_TO_BASKET, new AddProductToBasketCommand());
+    commands.put(CommandName.ADD_PRODUCT_TO_SHOP, new AddProductToShopCommand());
+    commands.put(CommandName.DELETE_PRODUCT_FROM_BASKET, new DeleteProductFromBasket());
+    commands.put(CommandName.DELETE_PRODUCT_FROM_SHOP, new DeleteProductFromShopCommand());
+    commands.put(CommandName.SHOW_ALL_PRODUCTS, new ShowAllProducts());
+    commands.put(CommandName.SHOW_ALL_USERS, new ShowAllUsersCommand());
+    commands.put(CommandName.CHECKOUT, new CheckoutCommand());
   }
 
   public Command getCommand(CommandName commandName) {

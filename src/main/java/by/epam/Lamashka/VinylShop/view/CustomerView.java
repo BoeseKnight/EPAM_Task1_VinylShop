@@ -15,17 +15,27 @@ public class CustomerView extends View {
   public CustomerView() {
     options =
         new String[] {
-          "1-ADD PRODUCT TO BASKET", "2-BUY", "3-CHANGE PASSWORD", "4-CHANGE EMAIL", "0-EXIT"
+          "1-PASSWORD CHANGE",
+          "2-EMAIL CHANGE",
+          "3-SEE ALL PRODUCTS",
+          "4-ADD PRODUCT TO BASKET",
+          "5-DELETE PRODUCT FROM BASKET",
+          "6-CHECKOUT",
+          "0-EXIT"
         };
   }
 
   @Override
   public View show() {
     CommandName command;
+    String commandParameters="";
     logger.info("Customer menu");
     Integer option = userOptionsInput();
     if (option != 0) {
-      response = controller.executeCommand(CommandName.values()[option - 1], "1@1 3");
+      if (option == 1 || option == 2) {
+        commandParameters = userDataInput();
+      }
+      response = controller.executeCommand(CommandName.values()[option + 1], commandParameters);
       logger.info(response.getKey());
       return response.getValue();
     } else return null;
