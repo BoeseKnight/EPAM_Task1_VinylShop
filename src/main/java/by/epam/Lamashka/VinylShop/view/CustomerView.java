@@ -10,7 +10,6 @@ import static java.lang.Integer.parseInt;
 
 public class CustomerView extends View {
   private static Logger logger = LogManager.getLogger(CustomerView.class);
-  private static Scanner in = new Scanner(System.in);
 
   public CustomerView() {
     options =
@@ -28,7 +27,7 @@ public class CustomerView extends View {
   @Override
   public View show() {
     CommandName command;
-    String commandParameters="";
+    String commandParameters = "";
     logger.info("Customer menu");
     Integer option = userOptionsInput();
     if (option != 0) {
@@ -44,22 +43,5 @@ public class CustomerView extends View {
   @Override
   protected String userDataInput() {
     return EmailPasswordInput.userInput();
-  }
-
-  @Override
-  protected Integer userOptionsInput() {
-    String choice = "";
-    boolean correctChoice = false;
-    while (choice != "0" && !correctChoice) {
-      try {
-        printOptions();
-        choice = in.next("[0-3]");
-        correctChoice = true;
-      } catch (Exception ex) {
-        System.out.println("Enter an integer value between 0-" + (options.length - 1));
-        in.next();
-      }
-    }
-    return parseInt(choice);
   }
 }

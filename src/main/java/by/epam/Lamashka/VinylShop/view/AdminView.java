@@ -21,8 +21,5 @@ public class AdminView extends View {
     super.printOptions();
   }
 
-  @Override
-  protected Integer userOptionsInput() {
-    return null;
-  }
+
 }
