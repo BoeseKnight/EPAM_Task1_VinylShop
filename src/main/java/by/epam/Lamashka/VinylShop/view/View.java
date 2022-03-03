@@ -30,7 +30,7 @@ public abstract class View {
     while (choice != "0" && !correctChoice) {
       try {
         printOptions();
-        choice = in.next("[0-" + (options.length - 1) + "]");
+        choice = in.next("[0-" + (options.length) + "]"); //must be (options.length-1)
         correctChoice = true;
       } catch (Exception ex) {
         System.out.println("Enter an integer value between 0-" + (options.length - 1));

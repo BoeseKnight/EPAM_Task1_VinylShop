@@ -11,7 +11,7 @@ public class User implements Serializable, Comparable<User> {
 
   @Override
   public int compareTo(User o) {
-    return password.compareTo(o.getEmailAddress());
+    return emailAddress.compareTo(o.getEmailAddress());
   }
 
   private UserRole role;

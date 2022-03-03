@@ -1,5 +1,7 @@
 package by.epam.Lamashka.VinylShop.controller.Command;
 
+import by.epam.Lamashka.VinylShop.Session;
+import by.epam.Lamashka.VinylShop.entity.User;
 import by.epam.Lamashka.VinylShop.service.ServiceFactory;
 import by.epam.Lamashka.VinylShop.service.UserService;
 import by.epam.Lamashka.VinylShop.view.AuthorizationView;
@@ -15,13 +17,17 @@ public class LoginCommand implements Command {
 
   @Override
   public Pair<String, View> execute(String parameters) {
+    Session session=Session.getInstance();
     String[] params = parameters.split(" ");
     String email = params[0];
     String password = params[1];
-    if (userService.login(email, password) == null) {
+    User user=userService.login(email, password);
+    if (user == null) {
       return new Pair<>(
           "You have entered either your email address or password incorrectly.", new Menu());
     } else {
+        session.setUser(user);
+        System.out.println(session.getUser());
       return new Pair<>("LogIn passed successfully", new CustomerView());
     }
   }

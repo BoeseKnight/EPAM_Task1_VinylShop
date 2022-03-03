@@ -7,6 +7,7 @@ import by.epam.Lamashka.VinylShop.dao.UserDAO;
 import by.epam.Lamashka.VinylShop.entity.User;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -29,10 +30,7 @@ public class UserService {
   }
 
   public User changePassword(String email, String password) {
-    Collections.sort((ArrayList<User>) userDAO.getAll());
-    for (User user : userDAO.getAll()) {
-      System.out.println(user);
-    }
+
     User user = userDAO.findByEmail(email);
     if (user != null) {
       user.setPassword(password);
@@ -42,12 +40,16 @@ public class UserService {
   }
 
   public User changeEmail(String email, String password) {
-
     User user = userDAO.findByEmail(email);
     if (user != null) {
       user.setEmailAddress(email);
       userDAO.update(user);
       return user;
     } else return null;
+  }
+
+  public Collection<User> usersSort() {
+    Collections.sort((ArrayList<User>) userDAO.getAll());
+    return userDAO.getAll();
   }
 }
