@@ -14,20 +14,20 @@ import org.apache.logging.log4j.Logger;
 
 public class LoginCommand implements Command {
   private final UserService userService = ServiceFactory.getInstance().getUserService();
+  private final Session session = Session.getInstance();
 
   @Override
   public Pair<String, View> execute(String parameters) {
-    Session session=Session.getInstance();
     String[] params = parameters.split(" ");
     String email = params[0];
     String password = params[1];
-    User user=userService.login(email, password);
+    User user = userService.login(email, password);
     if (user == null) {
       return new Pair<>(
           "You have entered either your email address or password incorrectly.", new Menu());
     } else {
-        session.setUser(user);
-        System.out.println(session.getUser());
+      session.setUser(user);
+      System.out.println(session.getUser());
       return new Pair<>("LogIn passed successfully", new CustomerView());
     }
   }

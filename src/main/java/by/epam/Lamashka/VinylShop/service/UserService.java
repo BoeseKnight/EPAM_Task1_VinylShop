@@ -30,7 +30,6 @@ public class UserService {
   }
 
   public User changePassword(String email, String password) {
-
     User user = userDAO.findByEmail(email);
     if (user != null) {
       user.setPassword(password);
@@ -39,13 +38,15 @@ public class UserService {
     } else return null;
   }
 
-  public User changeEmail(String email, String password) {
-    User user = userDAO.findByEmail(email);
-    if (user != null) {
-      user.setEmailAddress(email);
+  public User changeEmail(String oldEmail, String password, String newEmail) {
+    User user = userDAO.findByEmail(oldEmail);
+    if (userDAO.findByEmail(newEmail) == null) {
+      user.setEmailAddress(newEmail);
       userDAO.update(user);
       return user;
-    } else return null;
+    }
+    else return null;
+
   }
 
   public Collection<User> usersSort() {
