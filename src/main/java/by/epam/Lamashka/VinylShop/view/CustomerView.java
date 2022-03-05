@@ -26,7 +26,6 @@ public class CustomerView extends View {
 
   @Override
   public View show() {
-    CommandName command;
     String commandParameters = "";
     logger.info("Customer menu");
     Integer option = userOptionsInput();

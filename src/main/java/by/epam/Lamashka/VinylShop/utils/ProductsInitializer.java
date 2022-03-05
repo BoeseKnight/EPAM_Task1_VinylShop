@@ -1,6 +1,7 @@
 package by.epam.Lamashka.VinylShop.utils;
 
 import by.epam.Lamashka.VinylShop.dao.DAO;
+import by.epam.Lamashka.VinylShop.dao.DAOFactory;
 import by.epam.Lamashka.VinylShop.dao.SongDAO;
 import by.epam.Lamashka.VinylShop.entity.Song;
 
@@ -11,7 +12,7 @@ import java.util.Scanner;
 public class ProductsInitializer implements Initializer {
   @Override
   public void initialize() throws FileNotFoundException {
-    DAO<Song> songs = new SongDAO();
+    DAO<Song> songs = DAOFactory.getInstance().getSongDAO();
     Scanner in = new Scanner(new File("Products.txt"));
     in.useDelimiter("-|\\r?\\n");
     String name;

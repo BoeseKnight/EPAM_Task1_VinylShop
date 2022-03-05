@@ -12,7 +12,11 @@ import javafx.util.Pair;
 public class PasswordChangeCommand implements Command {
   private final UserService userService = ServiceFactory.getInstance().getUserService();
   Session session = Session.getInstance();
-
+  /**
+   * This method is used to execute Password Change command. Its main purpose is to change user's password.
+   * @param parameters This parameter is string received from User. It includes new password.
+   * @return Returns String response to User and next View (Menu) .
+   */
   @Override
   public Pair<String, View> execute(String parameters) {
     String[] params = parameters.split(" ");

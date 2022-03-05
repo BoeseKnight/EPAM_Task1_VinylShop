@@ -11,7 +11,7 @@ public abstract class View {
   protected Pair<String, View> response;
   protected Controller controller = new Controller();
   protected String options[];
-  protected final static Scanner in = new Scanner(System.in);
+  protected final Scanner in = new Scanner(System.in);
   public View() {}
 
   protected void printOptions() {
@@ -25,12 +25,12 @@ public abstract class View {
   protected abstract String userDataInput();
 
   protected Integer userOptionsInput(){
-    String choice = "";
+    String choice = " ";
     boolean correctChoice = false;
     while (choice != "0" && !correctChoice) {
       try {
         printOptions();
-        choice = in.next("[0-" + (options.length) + "]"); //must be (options.length-1)
+        choice = in.next("[0-" + (options.length-1) + "]"); //must be (options.length-1)
         correctChoice = true;
       } catch (Exception ex) {
         System.out.println("Enter an integer value between 0-" + (options.length - 1));

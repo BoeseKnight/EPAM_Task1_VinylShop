@@ -6,8 +6,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class User implements Serializable, Comparable<User> {
   private static final AtomicInteger count = new AtomicInteger(0);
-  private String password;
   private String emailAddress;
+  private String password;
 
   @Override
   public int compareTo(User o) {
@@ -17,9 +17,16 @@ public class User implements Serializable, Comparable<User> {
   private UserRole role;
 
   public User(String emailAddress, String password) {
+    this.role = UserRole.User;
     this.password = password;
     this.emailAddress = emailAddress;
     count.incrementAndGet();
+  }
+
+  public User(String emailAddress, String password, UserRole role) {
+    this.password = password;
+    this.emailAddress = emailAddress;
+    this.role = role;
   }
 
   public static AtomicInteger getCount() {

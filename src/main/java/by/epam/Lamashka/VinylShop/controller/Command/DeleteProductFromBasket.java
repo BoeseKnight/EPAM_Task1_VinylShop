@@ -1,5 +1,7 @@
 package by.epam.Lamashka.VinylShop.controller.Command;
 
+import by.epam.Lamashka.VinylShop.Session;
+import by.epam.Lamashka.VinylShop.entity.UserRole;
 import by.epam.Lamashka.VinylShop.service.ServiceFactory;
 import by.epam.Lamashka.VinylShop.service.UserService;
 import by.epam.Lamashka.VinylShop.view.AdminView;
@@ -12,6 +14,8 @@ public class DeleteProductFromBasket implements Command {
 
   @Override
   public Pair<String, View> execute(String parameters) {
-    return new Pair("PRODUCT WAS DELETED FROM BASKET", new CustomerView());
+    Session session = Session.getInstance();
+    View nextView= (session.getUser().getRole()== UserRole.Admin) ? new AdminView() : new CustomerView();
+    return new Pair("PRODUCT WAS DELETED FROM BASKET", nextView);
   }
 }
