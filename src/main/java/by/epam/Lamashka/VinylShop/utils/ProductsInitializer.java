@@ -9,11 +9,23 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * <p>ProductsInitializer class.</p>
+ *
+ * @author Asus
+ * @version $Id: $Id
+ */
 public class ProductsInitializer implements Initializer {
+  /** {@inheritDoc} */
   @Override
-  public void initialize() throws FileNotFoundException {
+  public void initialize() {
     DAO<Song> songs = DAOFactory.getInstance().getSongDAO();
-    Scanner in = new Scanner(new File("Products.txt"));
+    Scanner in = null;
+    try {
+      in = new Scanner(new File("Products.txt"));
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    }
     in.useDelimiter("-|\\r?\\n");
     String name;
     String artist;

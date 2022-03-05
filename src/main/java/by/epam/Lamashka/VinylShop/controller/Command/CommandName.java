@@ -1,5 +1,11 @@
 package by.epam.Lamashka.VinylShop.controller.Command;
 
+/**
+ * <p>CommandName class.</p>
+ *
+ * @author Asus
+ * @version $Id: $Id
+ */
 public enum CommandName {
   LOGIN,
   REGISTER,

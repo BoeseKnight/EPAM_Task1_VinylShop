@@ -9,9 +9,16 @@ import by.epam.Lamashka.VinylShop.view.CustomerView;
 import by.epam.Lamashka.VinylShop.view.View;
 import javafx.util.Pair;
 
+/**
+ * <p>DeleteProductFromBasket class.</p>
+ *
+ * @author Asus
+ * @version $Id: $Id
+ */
 public class DeleteProductFromBasket implements Command {
   private final UserService userService = ServiceFactory.getInstance().getUserService();
 
+  /** {@inheritDoc} */
   @Override
   public Pair<String, View> execute(String parameters) {
     Session session = Session.getInstance();

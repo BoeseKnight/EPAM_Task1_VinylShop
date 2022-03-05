@@ -8,18 +8,29 @@ import org.apache.logging.log4j.Logger;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+/**
+ * <p>AuthorizationView class.</p>
+ *
+ * @author Asus
+ * @version $Id: $Id
+ */
 public class AuthorizationView extends View {
   private static Logger logger = LogManager.getLogger(AuthorizationView.class);
 
+  /**
+   * <p>Constructor for AuthorizationView.</p>
+   */
   public AuthorizationView() {
     options = new String[] {"1-ENTER LOGIN", "2-ENTER PASSWORD"};
   }
 
+  /** {@inheritDoc} */
   @Override
   protected Integer userOptionsInput() {
     return null;
   }
 
+  /** {@inheritDoc} */
   @Override
   public View show() {
     logger.info("LOGIN MENU");
@@ -29,6 +40,7 @@ public class AuthorizationView extends View {
     return response.getValue();
   }
 
+  /** {@inheritDoc} */
   @Override
   protected String userDataInput() {
     return EmailPasswordInput.userInput();

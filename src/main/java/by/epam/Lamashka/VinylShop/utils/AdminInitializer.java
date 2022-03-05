@@ -7,10 +7,20 @@ import by.epam.Lamashka.VinylShop.entity.UserRole;
 
 import java.io.FileNotFoundException;
 
-public class AdminInitializer implements Initializer{
-    @Override
-    public void initialize() throws FileNotFoundException {
-        UserDAO users = DAOFactory.getInstance().getUserDAO();
-        users.save(new User("admin@a", "admin", UserRole.Admin));
+/**
+ * AdminInitializer class.
+ *
+ * @author Asus
+ * @version $Id: $Id
+ */
+public class AdminInitializer implements Initializer {
+  /** {@inheritDoc} */
+  @Override
+  public void initialize() {
+    UserDAO users = DAOFactory.getInstance().getUserDAO();
+    User admin = new User("admin@a", "admin", UserRole.Admin);
+    if (!users.getAll().contains(admin)) {
+      users.save(admin);
     }
+  }
 }

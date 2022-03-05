@@ -4,9 +4,18 @@ import by.epam.Lamashka.VinylShop.controller.Command.CommandName;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * <p>AdminView class.</p>
+ *
+ * @author Asus
+ * @version $Id: $Id
+ */
 public class AdminView extends View {
   private static Logger logger = LogManager.getLogger(AdminView.class);
 
+  /**
+   * <p>Constructor for AdminView.</p>
+   */
   public AdminView() {
     options =
         new String[] {
@@ -23,6 +32,7 @@ public class AdminView extends View {
         };
   }
 
+  /** {@inheritDoc} */
   @Override
   public View show() {
     String commandParameters = "";
@@ -38,6 +48,7 @@ public class AdminView extends View {
     } else return null;
   }
 
+  /** {@inheritDoc} */
   @Override
   protected String userDataInput() {
     return EmailPasswordInput.userInput();

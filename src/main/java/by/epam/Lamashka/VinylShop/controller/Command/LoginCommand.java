@@ -10,14 +10,19 @@ import javafx.util.Pair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * <p>LoginCommand class.</p>
+ *
+ * @author Asus
+ * @version $Id: $Id
+ */
 public class LoginCommand implements Command {
   private final UserService userService = ServiceFactory.getInstance().getUserService();
   private final Session session = Session.getInstance();
   /**
+   * {@inheritDoc}
+   *
    * This method is used to execute Login command.
-   * @param parameters This parameter is string received from User. It includes email and password,
-   * which are separated by white space
-   * @return Returns String response to User and next View (Menu Or Customer) .
    */
   @Override
   public Pair<String, View> execute(String parameters) {

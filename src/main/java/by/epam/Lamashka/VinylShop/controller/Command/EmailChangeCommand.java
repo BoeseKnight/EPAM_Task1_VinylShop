@@ -10,20 +10,24 @@ import by.epam.Lamashka.VinylShop.view.Menu;
 import by.epam.Lamashka.VinylShop.view.View;
 import javafx.util.Pair;
 
+/**
+ * <p>EmailChangeCommand class.</p>
+ *
+ * @author Asus
+ * @version $Id: $Id
+ */
 public class EmailChangeCommand implements Command {
   private final UserService userService = ServiceFactory.getInstance().getUserService();
   private final Session session = Session.getInstance();
   /**
+   * {@inheritDoc}
+   *
    * This method is used to execute Email Change command. Its main purpose is to change user's
    * email. It checks if the user wrote its password correctly to perform this command. If password
    * is incorrect, the user will be back to its customer view. If password is correct, program will
    * check if the written password is available. If it's not in use command will be executed
    * successfully and the user will be returned to Main menu,where it should log in with new user
    * data.
-   *
-   * @param parameters This parameter is string received from User. It includes new email address
-   *     and password.
-   * @return Returns String response to User and next View (Customer) .
    */
   @Override
   public Pair<String, View> execute(String parameters) {

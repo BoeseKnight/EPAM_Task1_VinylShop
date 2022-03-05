@@ -8,9 +8,16 @@ import by.epam.Lamashka.VinylShop.view.Menu;
 import by.epam.Lamashka.VinylShop.view.View;
 import javafx.util.Pair;
 
+/**
+ * <p>RegisterCommand class.</p>
+ *
+ * @author Asus
+ * @version $Id: $Id
+ */
 public class RegisterCommand implements Command {
   private final UserService userService = ServiceFactory.getInstance().getUserService();
 
+  /** {@inheritDoc} */
   @Override
   public Pair<String, View> execute(String parameters) {
     String[] params = parameters.split(" ");

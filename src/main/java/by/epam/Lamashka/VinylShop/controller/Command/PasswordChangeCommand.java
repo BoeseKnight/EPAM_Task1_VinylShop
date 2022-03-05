@@ -9,13 +9,19 @@ import by.epam.Lamashka.VinylShop.view.Menu;
 import by.epam.Lamashka.VinylShop.view.View;
 import javafx.util.Pair;
 
+/**
+ * <p>PasswordChangeCommand class.</p>
+ *
+ * @author Asus
+ * @version $Id: $Id
+ */
 public class PasswordChangeCommand implements Command {
   private final UserService userService = ServiceFactory.getInstance().getUserService();
-  Session session = Session.getInstance();
+  private Session session = Session.getInstance();
   /**
+   * {@inheritDoc}
+   *
    * This method is used to execute Password Change command. Its main purpose is to change user's password.
-   * @param parameters This parameter is string received from User. It includes new password.
-   * @return Returns String response to User and next View (Menu) .
    */
   @Override
   public Pair<String, View> execute(String parameters) {

@@ -11,14 +11,34 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * <p>UserService class.</p>
+ *
+ * @author Asus
+ * @version $Id: $Id
+ */
 public class UserService {
   private static final UserDAO userDAO = DAOFactory.getInstance().getUserDAO();
 
+  /**
+   * <p>login.</p>
+   *
+   * @param email a {@link java.lang.String} object
+   * @param password a {@link java.lang.String} object
+   * @return a {@link by.epam.Lamashka.VinylShop.entity.User} object
+   */
   public User login(String email, String password) {
     User user = userDAO.findByEmailAndPassword(email, password);
     return user;
   }
 
+  /**
+   * <p>register.</p>
+   *
+   * @param email a {@link java.lang.String} object
+   * @param password a {@link java.lang.String} object
+   * @return a {@link by.epam.Lamashka.VinylShop.entity.User} object
+   */
   public User register(String email, String password) {
     User user = userDAO.findByEmail(email);
     if (user != null) {
@@ -29,6 +49,13 @@ public class UserService {
     }
   }
 
+  /**
+   * <p>changePassword.</p>
+   *
+   * @param email a {@link java.lang.String} object
+   * @param password a {@link java.lang.String} object
+   * @return a {@link by.epam.Lamashka.VinylShop.entity.User} object
+   */
   public User changePassword(String email, String password) {
     User user = userDAO.findByEmail(email);
     if (user != null) {
@@ -38,6 +65,14 @@ public class UserService {
     } else return null;
   }
 
+  /**
+   * <p>changeEmail.</p>
+   *
+   * @param oldEmail a {@link java.lang.String} object
+   * @param password a {@link java.lang.String} object
+   * @param newEmail a {@link java.lang.String} object
+   * @return a {@link by.epam.Lamashka.VinylShop.entity.User} object
+   */
   public User changeEmail(String oldEmail, String password, String newEmail) {
     User user = userDAO.findByEmail(oldEmail);
     if (userDAO.findByEmail(newEmail) == null) {
@@ -49,6 +84,11 @@ public class UserService {
 
   }
 
+  /**
+   * <p>usersSort.</p>
+   *
+   * @return a {@link java.util.Collection} object
+   */
   public Collection<User> usersSort() {
     Collections.sort((ArrayList<User>) userDAO.getAll());
     return userDAO.getAll();

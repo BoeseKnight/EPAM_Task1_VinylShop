@@ -8,9 +8,18 @@ import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
 
+/**
+ * <p>CustomerView class.</p>
+ *
+ * @author Asus
+ * @version $Id: $Id
+ */
 public class CustomerView extends View {
   private static Logger logger = LogManager.getLogger(CustomerView.class);
 
+  /**
+   * <p>Constructor for CustomerView.</p>
+   */
   public CustomerView() {
     options =
         new String[] {
@@ -24,6 +33,7 @@ public class CustomerView extends View {
         };
   }
 
+  /** {@inheritDoc} */
   @Override
   public View show() {
     String commandParameters = "";
@@ -39,6 +49,7 @@ public class CustomerView extends View {
     } else return null;
   }
 
+  /** {@inheritDoc} */
   @Override
   protected String userDataInput() {
     return EmailPasswordInput.userInput();

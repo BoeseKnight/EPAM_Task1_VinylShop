@@ -16,10 +16,17 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * <p>ShowAllUsersCommand class.</p>
+ *
+ * @author Asus
+ * @version $Id: $Id
+ */
 public class ShowAllUsersCommand implements Command {
   private final UserService userService = ServiceFactory.getInstance().getUserService();
   private static Logger logger = LogManager.getLogger(ShowAllUsersCommand.class);
 
+  /** {@inheritDoc} */
   @Override
   public Pair<String, View> execute(String parameters) {
     Session session = Session.getInstance();
