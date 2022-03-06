@@ -6,15 +6,11 @@ import by.epam.Lamashka.VinylShop.entity.UserRole;
 import by.epam.Lamashka.VinylShop.service.ServiceFactory;
 import by.epam.Lamashka.VinylShop.service.UserService;
 import by.epam.Lamashka.VinylShop.view.AdminView;
-import by.epam.Lamashka.VinylShop.view.AuthorizationView;
 import by.epam.Lamashka.VinylShop.view.CustomerView;
 import by.epam.Lamashka.VinylShop.view.View;
 import javafx.util.Pair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * <p>ShowAllUsersCommand class.</p>

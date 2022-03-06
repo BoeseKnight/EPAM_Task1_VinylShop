@@ -4,6 +4,7 @@ import by.epam.Lamashka.VinylShop.Session;
 import by.epam.Lamashka.VinylShop.entity.UserRole;
 import by.epam.Lamashka.VinylShop.service.ServiceFactory;
 import by.epam.Lamashka.VinylShop.service.UserService;
+import by.epam.Lamashka.VinylShop.service.UserServiceImpl;
 import by.epam.Lamashka.VinylShop.view.AdminView;
 import by.epam.Lamashka.VinylShop.view.CustomerView;
 import by.epam.Lamashka.VinylShop.view.View;

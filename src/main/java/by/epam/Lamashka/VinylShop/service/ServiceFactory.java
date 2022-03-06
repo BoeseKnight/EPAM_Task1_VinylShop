@@ -8,7 +8,7 @@ package by.epam.Lamashka.VinylShop.service;
  */
 public class ServiceFactory {
   private static final ServiceFactory instance = new ServiceFactory();
-  private final UserService userService = new UserService();
+  private final UserService userServiceImpl = new UserServiceImpl();
 
   private ServiceFactory() {}
 
@@ -24,9 +24,9 @@ public class ServiceFactory {
   /**
    * <p>Getter for the field <code>userService</code>.</p>
    *
-   * @return a {@link by.epam.Lamashka.VinylShop.service.UserService} object
+   * @return a {@link UserServiceImpl} object
    */
   public UserService getUserService() {
-    return userService;
+    return userServiceImpl;
   }
 }

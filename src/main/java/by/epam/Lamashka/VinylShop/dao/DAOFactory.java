@@ -1,11 +1,8 @@
 package by.epam.Lamashka.VinylShop.dao;
 
 import by.epam.Lamashka.VinylShop.entity.Song;
-import by.epam.Lamashka.VinylShop.entity.User;
 import by.epam.Lamashka.VinylShop.entity.VinylProduct;
 import by.epam.Lamashka.VinylShop.entity.VinylRecord;
-import by.epam.Lamashka.VinylShop.service.ServiceFactory;
-import by.epam.Lamashka.VinylShop.service.UserService;
 
 /**
  * <p>DAOFactory class.</p>

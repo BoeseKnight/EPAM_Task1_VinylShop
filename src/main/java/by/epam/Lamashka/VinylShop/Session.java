@@ -1,8 +1,6 @@
 package by.epam.Lamashka.VinylShop;
 
 import by.epam.Lamashka.VinylShop.entity.User;
-import by.epam.Lamashka.VinylShop.service.ServiceFactory;
-import by.epam.Lamashka.VinylShop.service.UserService;
 
 /**
  * <p>Session class.</p>

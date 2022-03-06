@@ -1,6 +1,5 @@
 package by.epam.Lamashka.VinylShop.controller.Command;
 
-import by.epam.Lamashka.VinylShop.entity.User;
 import by.epam.Lamashka.VinylShop.service.ServiceFactory;
 import by.epam.Lamashka.VinylShop.service.UserService;
 import by.epam.Lamashka.VinylShop.view.AuthorizationView;

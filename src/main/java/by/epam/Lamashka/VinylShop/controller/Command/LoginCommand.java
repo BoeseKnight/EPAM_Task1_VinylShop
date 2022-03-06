@@ -5,10 +5,9 @@ import by.epam.Lamashka.VinylShop.entity.User;
 import by.epam.Lamashka.VinylShop.entity.UserRole;
 import by.epam.Lamashka.VinylShop.service.ServiceFactory;
 import by.epam.Lamashka.VinylShop.service.UserService;
+import by.epam.Lamashka.VinylShop.service.UserServiceImpl;
 import by.epam.Lamashka.VinylShop.view.*;
 import javafx.util.Pair;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 /**
  * <p>LoginCommand class.</p>
