@@ -9,6 +9,7 @@ public class UserDataInputProvider {
         userDataInputMap.put(1, new AuthorizationInput());
         userDataInputMap.put(2, new AuthorizationInput());
         userDataInputMap.put(3, new PasswordChangeInput());
+        userDataInputMap.put(4, new EmailChangeInput());
 
     }
     public UserDataInput getUserDataInput(Integer parameters){

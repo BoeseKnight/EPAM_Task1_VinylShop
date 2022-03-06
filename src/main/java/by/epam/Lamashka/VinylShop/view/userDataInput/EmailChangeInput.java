@@ -6,18 +6,18 @@ import org.apache.logging.log4j.Logger;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class AuthorizationInput implements UserDataInput {
-    private Logger logger = LogManager.getLogger(AuthorizationInput.class);
+public class EmailChangeInput implements UserDataInput{
+    private Logger logger = LogManager.getLogger(EmailChangeInput.class);
     private final Scanner in = new Scanner(System.in);
     @Override
     public String userInput() {
-        logger.info("ENTER AN EMAIL");
+        logger.info("ENTER A NEW EMAIL");
         String email = in.next();
         while (!Pattern.matches("^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$", email)) {
             logger.info("Incorrect Email format. Try again.");
             email = in.next();
         }
-        logger.info("ENTER A PASSWORD");
+        logger.info("ENTER YOUR PASSWORD");
         String password = in.next();
         return email + " " + password;
     }
