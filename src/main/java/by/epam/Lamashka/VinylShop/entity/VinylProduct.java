@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * <p>VinylProduct class.</p>
+ * VinylProduct class.
  *
  * @author Asus
  * @version $Id: $Id
@@ -12,26 +12,22 @@ import java.util.List;
 public class VinylProduct extends Product implements Serializable {
   private List<VinylRecord> vinylRecords;
   private int vinylRecordsQuantity;
-  private int id;
 
-  /**
-   * <p>Constructor for VinylProduct.</p>
-   */
+  /** Constructor for VinylProduct. */
   public VinylProduct() {}
 
   /**
-   * <p>Constructor for VinylProduct.</p>
+   * Constructor for VinylProduct.
    *
    * @param vinylRecords a {@link java.util.List} object
-   * @param vinylRecordsQuantity a int
    */
-  public VinylProduct(List<VinylRecord> vinylRecords, int vinylRecordsQuantity) {
+  public VinylProduct(List<VinylRecord> vinylRecords) {
     this.vinylRecords = vinylRecords;
-    this.vinylRecordsQuantity = vinylRecordsQuantity;
+    this.vinylRecordsQuantity = vinylRecords.size();
   }
 
   /**
-   * <p>Constructor for VinylProduct.</p>
+   * Constructor for VinylProduct.
    *
    * @param productQuantity a int
    * @param price a float
@@ -49,7 +45,7 @@ public class VinylProduct extends Product implements Serializable {
       int vinylRecordsQuantity) {
     super(productQuantity, price, productCode, description);
     this.vinylRecords = vinylRecords;
-    this.vinylRecordsQuantity = vinylRecordsQuantity;
+    this.vinylRecordsQuantity = vinylRecords.size();
   }
 
   /** {@inheritDoc} */
@@ -71,14 +67,5 @@ public class VinylProduct extends Product implements Serializable {
         + ", vinylRecordsQuantity="
         + vinylRecordsQuantity
         + '}';
-  }
-
-  /**
-   * <p>Getter for the field <code>id</code>.</p>
-   *
-   * @return a int
-   */
-  public int getId() {
-    return id;
   }
 }

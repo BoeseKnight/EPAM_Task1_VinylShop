@@ -7,10 +7,10 @@ import java.io.*;
 public class ShopDeserialization {
   public static Shop deserialize() {
     Shop shop = null;
-    if (new File("src\\save.ser").isFile()) {
+    if (new File("save.ser").isFile()) {
       FileInputStream fileInputStream = null;
       try {
-        fileInputStream = new FileInputStream("src\\save.ser");
+        fileInputStream = new FileInputStream("save.ser");
       } catch (FileNotFoundException e) {
         e.printStackTrace();
       }

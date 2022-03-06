@@ -18,7 +18,7 @@ public class VinylRecordDAO implements DAO<VinylRecord> {
   /** {@inheritDoc} */
   @Override
   public void update(VinylRecord vinylRecord) {
-    vinylRecords.set(vinylRecord.getId(), vinylRecord);
+    vinylRecords.set(vinylRecords.indexOf(vinylRecord), vinylRecord);
   }
 
   /** {@inheritDoc} */

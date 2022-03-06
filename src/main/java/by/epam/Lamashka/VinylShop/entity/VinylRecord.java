@@ -15,7 +15,6 @@ public class VinylRecord implements Serializable {
   private String albumName;
   private String genre;
   private String releaseDate;
-  private int id;
 
   /**
    * <p>Constructor for VinylRecord.</p>
@@ -143,12 +142,14 @@ public class VinylRecord implements Serializable {
     this.releaseDate = releaseDate;
   }
 
-  /**
-   * <p>Getter for the field <code>id</code>.</p>
-   *
-   * @return a int
-   */
-  public int getId() {
-    return id;
+  @Override
+  public String toString() {
+    return "VinylRecord{" +
+            "songs=" + songs +
+            ", artist='" + artist + '\'' +
+            ", albumName='" + albumName + '\'' +
+            ", genre='" + genre + '\'' +
+            ", releaseDate='" + releaseDate + '\'' +
+            '}';
   }
 }

@@ -1,10 +1,36 @@
-Lalala1-Freddy-03:00
-Lalala2-Freddy-03:00
-Lalala3-Freddy-03:00
-Lalala4-Freddy-03:00
-Lalala5-Freddy-03:00
-Bababa1-Katty-05:00
-Bababa2-Katty-05:00
-Bababa3-Katty-05:00
-Bababa4-Katty-05:00
-Bababa5-Katty-05:00
+<VinylProduct>
+<VinylRecord>
+<Songs>
+Was It A Dream-Thirty Seconds To Mars-03:00
+From Yesterday-Thirty Seconds To Mars-04:00
+The Kill-Thirty Seconds To Mars-04:00
+A Beautiful Lie-Thirty Seconds To Mars-04:00
+ATTACK-Thirty Seconds To Mars-04:00
+</Songs>
+Thirty Seconds To Mars-A Beautiful Lie-Rock-12.12.12
+</VinylRecord>
+</VinylProduct>
+<VinylProduct>
+<VinylRecord>
+<Songs>
+A Place for My Head-Linkin Park-05:00
+In the End-Linkin Park-05:00
+Runaway-Linkin Park-05:00
+Crawling-Linkin Park-05:00
+With You-Linkin Park-05:00
+</Songs>
+Linkin Park-Hybrid Theory-Rock-11.11.11
+</VinylRecord>
+</VinylProduct>
+<VinylProduct>
+<VinylRecord>
+<Songs>
+The Hell Song-Sum41-03:00
+Over My Head-Sum41-03:00
+Thanks For Nothing-Sum41-03:00
+Still Waiting-Sum41-03:00
+All Messed Up-Sum41-03:00
+</Songs>
+Sum41-Does This Look Infected-Punk-12.12.12
+</VinylRecord>
+</VinylProduct>

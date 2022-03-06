@@ -38,7 +38,7 @@ public class CustomerView extends View {
     logger.info("Customer menu");
     Integer option = userOptionsInput();
     if (option != 0) {
-      if (option == 1 || option == 2 || option==3) {
+      if (option == 1 || option == 2) {
         commandParameters = userDataInput(option+2);
       }
       response = controller.executeCommand(CommandName.values()[option + 1], commandParameters);

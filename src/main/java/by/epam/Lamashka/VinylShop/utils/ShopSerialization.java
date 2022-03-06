@@ -15,7 +15,7 @@ public class ShopSerialization {
         shop.setUsers(DataSource.getInstance().getUsers());
         FileOutputStream outputStream = null;
         try {
-            outputStream = new FileOutputStream("src\\save.ser");
+            outputStream = new FileOutputStream("save.ser");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
