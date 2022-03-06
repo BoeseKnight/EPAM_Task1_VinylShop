@@ -1,18 +1,15 @@
 package by.epam.Lamashka.VinylShop.view;
 
 import by.epam.Lamashka.VinylShop.controller.Command.CommandName;
-import by.epam.Lamashka.VinylShop.view.userDataInput.UserDataInput;
-import by.epam.Lamashka.VinylShop.view.userDataInput.UserDataInputProvider;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import static java.lang.Integer.parseInt;
 
 /**
  * CustomerView class.
  *
- * @author Asus
- * @version $Id: $Id
+ * @author Ilya Lamashka (BoeseKnight)
+ * @version 1.0
+ * @since 05-03-2022
  */
 public class CustomerView extends View {
   private Logger logger = LogManager.getLogger(CustomerView.class);
@@ -38,19 +35,12 @@ public class CustomerView extends View {
     logger.info("Customer menu");
     Integer option = userOptionsInput();
     if (option != 0) {
-      if (option == 1 || option == 2) {
-        commandParameters = userDataInput(option+2);
+      if (option == 1 || option == 2 || option==4) {
+        commandParameters = userDataInput(option + 2);
       }
       response = controller.executeCommand(CommandName.values()[option + 1], commandParameters);
       logger.info(response.getKey());
       return response.getValue();
     } else return null;
-  }
-
-  /** {@inheritDoc} */
-  @Override
-  protected String userDataInput(Integer option) {
-    UserDataInput userDataInput = userDataInputProvider.getUserDataInput(option);
-    return userDataInput.userInput();
   }
 }

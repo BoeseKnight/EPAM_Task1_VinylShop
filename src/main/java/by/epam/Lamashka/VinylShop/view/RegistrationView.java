@@ -1,18 +1,15 @@
 package by.epam.Lamashka.VinylShop.view;
 
 import by.epam.Lamashka.VinylShop.controller.Command.CommandName;
-import by.epam.Lamashka.VinylShop.view.userDataInput.UserDataInput;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.util.Scanner;
-import java.util.regex.Pattern;
 
 /**
  * RegistrationView class.
  *
- * @author Asus
- * @version $Id: $Id
+ * @author Ilya Lamashka (BoeseKnight)
+ * @version 1.0
+ * @since 05-03-2022
  */
 public class RegistrationView extends View {
   /** Constructor for RegistrationView. */
@@ -34,20 +31,7 @@ public class RegistrationView extends View {
 
   /** {@inheritDoc} */
   @Override
-  protected void printOptions() {
-    super.printOptions();
-  }
-
-  /** {@inheritDoc} */
-  @Override
   protected Integer userOptionsInput() {
     return null;
-  }
-
-  /** {@inheritDoc} */
-  @Override
-  protected String userDataInput(Integer option) {
-    UserDataInput userDataInput = userDataInputProvider.getUserDataInput(option);
-    return userDataInput.userInput();
   }
 }

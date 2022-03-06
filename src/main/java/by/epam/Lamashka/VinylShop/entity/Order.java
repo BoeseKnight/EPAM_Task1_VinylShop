@@ -1,21 +1,26 @@
 package by.epam.Lamashka.VinylShop.entity;
 
 import java.io.Serializable;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * <p>Order class.</p>
+ * Order class.
  *
  * @author Asus
  * @version $Id: $Id
  */
 public class Order implements Serializable {
+  private static final AtomicInteger count = new AtomicInteger(0);
   private String orderNumber;
   private String orderDate;
   private OrderStatus orderStatus;
   private float sum;
 
+  public static AtomicInteger getCount() {
+    return count;
+  }
   /**
-   * <p>Getter for the field <code>orderNumber</code>.</p>
+   * Getter for the field <code>orderNumber</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -24,7 +29,7 @@ public class Order implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>orderNumber</code>.</p>
+   * Setter for the field <code>orderNumber</code>.
    *
    * @param orderNumber a {@link java.lang.String} object
    */
@@ -33,7 +38,7 @@ public class Order implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>orderDate</code>.</p>
+   * Getter for the field <code>orderDate</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -42,7 +47,7 @@ public class Order implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>orderDate</code>.</p>
+   * Setter for the field <code>orderDate</code>.
    *
    * @param orderDate a {@link java.lang.String} object
    */
@@ -51,7 +56,7 @@ public class Order implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>orderStatus</code>.</p>
+   * Getter for the field <code>orderStatus</code>.
    *
    * @return a {@link by.epam.Lamashka.VinylShop.entity.OrderStatus} object
    */
@@ -60,7 +65,7 @@ public class Order implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>orderStatus</code>.</p>
+   * Setter for the field <code>orderStatus</code>.
    *
    * @param orderStatus a {@link by.epam.Lamashka.VinylShop.entity.OrderStatus} object
    */
@@ -69,7 +74,7 @@ public class Order implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>sum</code>.</p>
+   * Getter for the field <code>sum</code>.
    *
    * @return a float
    */
@@ -78,7 +83,7 @@ public class Order implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>sum</code>.</p>
+   * Setter for the field <code>sum</code>.
    *
    * @param sum a float
    */

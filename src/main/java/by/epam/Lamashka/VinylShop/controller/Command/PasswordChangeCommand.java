@@ -34,7 +34,7 @@ public class PasswordChangeCommand implements Command {
     System.out.println(session.getUser());
     View nextView =
         (session.getUser().getRole() == UserRole.Admin) ? new AdminView() : new CustomerView();
-    if (!session.getUser().getPassword().equals(currentPassword)){
+    if (!session.getUser().getPassword().equals(currentPassword)) {
       return new Pair<>("YOU'VE ENTERED YOUR CURRENT PASSWORD INCORRECTLY!", nextView);
     }
     if (userService.changePassword(session.getUser().getEmailAddress(), newPassword) == null) {

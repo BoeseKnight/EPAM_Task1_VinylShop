@@ -1,21 +1,26 @@
 package by.epam.Lamashka.VinylShop.entity;
 
 import java.io.Serializable;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * <p>Address class.</p>
+ * Address class.
  *
  * @author Asus
  * @version $Id: $Id
  */
 public class Address implements Serializable {
+  private static final AtomicInteger count = new AtomicInteger(0);
   private String addressLine;
   private String postcode;
   private String country;
   private String city;
 
+  public static AtomicInteger getCount() {
+    return count;
+  }
   /**
-   * <p>Getter for the field <code>addressLine</code>.</p>
+   * Getter for the field <code>addressLine</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -24,7 +29,7 @@ public class Address implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>addressLine</code>.</p>
+   * Setter for the field <code>addressLine</code>.
    *
    * @param addressLine a {@link java.lang.String} object
    */
@@ -33,7 +38,7 @@ public class Address implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>postcode</code>.</p>
+   * Getter for the field <code>postcode</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -42,7 +47,7 @@ public class Address implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>postcode</code>.</p>
+   * Setter for the field <code>postcode</code>.
    *
    * @param postcode a {@link java.lang.String} object
    */
@@ -51,7 +56,7 @@ public class Address implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>country</code>.</p>
+   * Getter for the field <code>country</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -60,7 +65,7 @@ public class Address implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>country</code>.</p>
+   * Setter for the field <code>country</code>.
    *
    * @param country a {@link java.lang.String} object
    */
@@ -69,7 +74,7 @@ public class Address implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>city</code>.</p>
+   * Getter for the field <code>city</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -78,7 +83,7 @@ public class Address implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>city</code>.</p>
+   * Setter for the field <code>city</code>.
    *
    * @param city a {@link java.lang.String} object
    */

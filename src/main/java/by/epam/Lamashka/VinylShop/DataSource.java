@@ -2,7 +2,6 @@ package by.epam.Lamashka.VinylShop;
 
 import by.epam.Lamashka.VinylShop.entity.*;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,8 +10,9 @@ import java.util.Map;
 /**
  * DataSource class.
  *
- * @author Asus
- * @version $Id: $Id
+ * @author Ilya Lamashka (BoeseKnight)
+ * @version 1.0
+ * @since 05-03-2022
  */
 public class DataSource {
 
@@ -22,6 +22,7 @@ public class DataSource {
   private final List<VinylRecord> vinylRecords = new ArrayList<>();
   private final List<VinylProduct> vinylProducts = new ArrayList<>();
   private final List<Order> orders = new ArrayList<>();
+  private final List<Customer> customers = new ArrayList<>();
   private final Map<String, Basket> baskets = new HashMap<>();
 
   private DataSource() {}
@@ -87,6 +88,10 @@ public class DataSource {
    */
   public Map<String, Basket> getBaskets() {
     return baskets;
+  }
+
+  public List<Customer> getCustomers() {
+    return customers;
   }
 
   @Override

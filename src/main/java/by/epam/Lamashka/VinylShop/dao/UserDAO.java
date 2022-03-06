@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * <p>UserDAO class.</p>
+ * UserDAO class.
  *
  * @author Asus
  * @version $Id: $Id
@@ -46,7 +46,7 @@ public class UserDAO implements DAO<User> {
   }
 
   /**
-   * <p>findByEmail.</p>
+   * findByEmail.
    *
    * @param email a {@link java.lang.String} object
    * @return a {@link by.epam.Lamashka.VinylShop.entity.User} object
@@ -58,7 +58,7 @@ public class UserDAO implements DAO<User> {
   }
 
   /**
-   * <p>findByEmailAndPassword.</p>
+   * findByEmailAndPassword.
    *
    * @param email a {@link java.lang.String} object
    * @param password a {@link java.lang.String} object

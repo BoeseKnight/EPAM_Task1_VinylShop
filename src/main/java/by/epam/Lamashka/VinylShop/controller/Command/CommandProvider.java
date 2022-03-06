@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * <p>CommandProvider class.</p>
+ * CommandProvider class.
  *
  * @author Asus
  * @version $Id: $Id
@@ -13,9 +13,7 @@ public class CommandProvider {
   private final Map<CommandName, Command> commands = new HashMap<>();
   private Command command;
 
-  /**
-   * <p>Constructor for CommandProvider.</p>
-   */
+  /** Constructor for CommandProvider. */
   public CommandProvider() {
     commands.put(CommandName.LOGIN, new LoginCommand());
     commands.put(CommandName.REGISTER, new RegisterCommand());
@@ -31,7 +29,7 @@ public class CommandProvider {
   }
 
   /**
-   * <p>Getter for the field <code>command</code>.</p>
+   * Getter for the field <code>command</code>.
    *
    * @param commandName a {@link by.epam.Lamashka.VinylShop.controller.Command.CommandName} object
    * @return a {@link by.epam.Lamashka.VinylShop.controller.Command.Command} object

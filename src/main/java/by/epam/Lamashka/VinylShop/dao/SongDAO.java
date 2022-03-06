@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * <p>SongDAO class.</p>
+ * SongDAO class.
  *
  * @author Asus
  * @version $Id: $Id

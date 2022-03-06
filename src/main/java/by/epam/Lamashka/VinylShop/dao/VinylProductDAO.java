@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * <p>VinylProductDAO class.</p>
+ * VinylProductDAO class.
  *
  * @author Asus
  * @version $Id: $Id
@@ -43,6 +43,12 @@ public class VinylProductDAO implements DAO<VinylProduct> {
   /** {@inheritDoc} */
   @Override
   public VinylProduct get(int id) {
-    return vinylProducts.get(id);
+    VinylProduct product;
+    try{
+    product=vinylProducts.get(id);
+    }catch(Exception e){
+      return null;
+    }
+    return product;
   }
 }

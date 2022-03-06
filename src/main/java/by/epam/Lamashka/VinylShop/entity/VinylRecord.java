@@ -2,27 +2,28 @@ package by.epam.Lamashka.VinylShop.entity;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * <p>VinylRecord class.</p>
+ * VinylRecord class.
  *
  * @author Asus
  * @version $Id: $Id
  */
 public class VinylRecord implements Serializable {
+  private static final AtomicInteger count = new AtomicInteger(0);
+
   private List<Song> songs;
   private String artist;
   private String albumName;
   private String genre;
   private String releaseDate;
 
-  /**
-   * <p>Constructor for VinylRecord.</p>
-   */
+  /** Constructor for VinylRecord. */
   public VinylRecord() {}
 
   /**
-   * <p>Constructor for VinylRecord.</p>
+   * Constructor for VinylRecord.
    *
    * @param songs a {@link java.util.List} object
    */
@@ -35,7 +36,7 @@ public class VinylRecord implements Serializable {
   }
 
   /**
-   * <p>Constructor for VinylRecord.</p>
+   * Constructor for VinylRecord.
    *
    * @param songs a {@link java.util.List} object
    * @param artist a {@link java.lang.String} object
@@ -52,8 +53,11 @@ public class VinylRecord implements Serializable {
     this.releaseDate = releaseDate;
   }
 
+  public static AtomicInteger getCount() {
+    return count;
+  }
   /**
-   * <p>Getter for the field <code>artist</code>.</p>
+   * Getter for the field <code>artist</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -62,7 +66,7 @@ public class VinylRecord implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>artist</code>.</p>
+   * Setter for the field <code>artist</code>.
    *
    * @param artist a {@link java.lang.String} object
    */
@@ -71,7 +75,7 @@ public class VinylRecord implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>albumName</code>.</p>
+   * Getter for the field <code>albumName</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -80,7 +84,7 @@ public class VinylRecord implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>albumName</code>.</p>
+   * Setter for the field <code>albumName</code>.
    *
    * @param albumName a {@link java.lang.String} object
    */
@@ -89,7 +93,7 @@ public class VinylRecord implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>genre</code>.</p>
+   * Getter for the field <code>genre</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -98,7 +102,7 @@ public class VinylRecord implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>genre</code>.</p>
+   * Setter for the field <code>genre</code>.
    *
    * @param genre a {@link java.lang.String} object
    */
@@ -107,7 +111,7 @@ public class VinylRecord implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>songs</code>.</p>
+   * Getter for the field <code>songs</code>.
    *
    * @return a {@link java.util.List} object
    */
@@ -116,7 +120,7 @@ public class VinylRecord implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>songs</code>.</p>
+   * Setter for the field <code>songs</code>.
    *
    * @param songs a {@link java.util.List} object
    */
@@ -125,7 +129,7 @@ public class VinylRecord implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>releaseDate</code>.</p>
+   * Getter for the field <code>releaseDate</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -134,7 +138,7 @@ public class VinylRecord implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>releaseDate</code>.</p>
+   * Setter for the field <code>releaseDate</code>.
    *
    * @param releaseDate a {@link java.lang.String} object
    */
@@ -144,12 +148,21 @@ public class VinylRecord implements Serializable {
 
   @Override
   public String toString() {
-    return "VinylRecord{" +
-            "songs=" + songs +
-            ", artist='" + artist + '\'' +
-            ", albumName='" + albumName + '\'' +
-            ", genre='" + genre + '\'' +
-            ", releaseDate='" + releaseDate + '\'' +
-            '}';
+    return "VinylRecord{"
+        + "songs="
+        + songs
+        + ", artist='"
+        + artist
+        + '\''
+        + ", albumName='"
+        + albumName
+        + '\''
+        + ", genre='"
+        + genre
+        + '\''
+        + ", releaseDate='"
+        + releaseDate
+        + '\''
+        + '}';
   }
 }

@@ -4,27 +4,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * <p>ViewProvider class.</p>
+ * ViewProvider class.
  *
- * @author Asus
- * @version $Id: $Id
+ * @author Ilya Lamashka (BoeseKnight)
+ * @version 1.0
+ * @since 05-03-2022
  */
 public class ViewProvider {
   private Map<Integer, View> views = new HashMap<>();
 
-  /**
-   * <p>Constructor for ViewProvider.</p>
-   */
+  /** Constructor for ViewProvider. */
   public ViewProvider() {
     views.put(0, null);
     views.put(1, new AuthorizationView());
     views.put(2, new RegistrationView());
-    views.put(3, new CustomerView());
-    views.put(4, new AdminView());
   }
 
   /**
-   * <p>getView.</p>
+   * getView.
    *
    * @param option a {@link java.lang.Integer} object
    * @return a {@link by.epam.Lamashka.VinylShop.view.View} object

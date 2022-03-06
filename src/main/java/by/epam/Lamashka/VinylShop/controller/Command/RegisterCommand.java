@@ -8,7 +8,7 @@ import by.epam.Lamashka.VinylShop.view.View;
 import javafx.util.Pair;
 
 /**
- * <p>RegisterCommand class.</p>
+ * RegisterCommand class.
  *
  * @author Asus
  * @version $Id: $Id

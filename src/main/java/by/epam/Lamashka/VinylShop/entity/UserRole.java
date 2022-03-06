@@ -1,7 +1,7 @@
 package by.epam.Lamashka.VinylShop.entity;
 
 /**
- * <p>UserRole class.</p>
+ * UserRole class.
  *
  * @author Asus
  * @version $Id: $Id

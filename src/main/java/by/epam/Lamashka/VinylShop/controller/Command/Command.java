@@ -4,14 +4,14 @@ import by.epam.Lamashka.VinylShop.view.View;
 import javafx.util.Pair;
 
 /**
- * <p>Command interface.</p>
+ * Command interface.
  *
  * @author Asus
  * @version $Id: $Id
  */
 public interface Command {
   /**
-   * <p>execute.</p>
+   * execute.
    *
    * @param parameters a {@link java.lang.String} object
    * @return a Pair object

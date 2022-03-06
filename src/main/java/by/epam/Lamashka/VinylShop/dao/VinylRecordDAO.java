@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * <p>VinylRecordDAO class.</p>
+ * VinylRecordDAO class.
  *
  * @author Asus
  * @version $Id: $Id

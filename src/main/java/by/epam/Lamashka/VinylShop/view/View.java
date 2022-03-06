@@ -1,6 +1,7 @@
 package by.epam.Lamashka.VinylShop.view;
 
 import by.epam.Lamashka.VinylShop.controller.Controller;
+import by.epam.Lamashka.VinylShop.view.userDataInput.UserDataInput;
 import by.epam.Lamashka.VinylShop.view.userDataInput.UserDataInputProvider;
 import javafx.util.Pair;
 
@@ -9,7 +10,7 @@ import java.util.Scanner;
 import static java.lang.Integer.parseInt;
 
 /**
- * <p>Abstract View class.</p>
+ * Abstract View class.
  *
  * @author Asus
  * @version $Id: $Id
@@ -19,16 +20,12 @@ public abstract class View {
   protected Controller controller = new Controller();
   protected String options[];
   protected final Scanner in = new Scanner(System.in);
-  protected final UserDataInputProvider userDataInputProvider=new UserDataInputProvider();
+  protected final UserDataInputProvider userDataInputProvider = new UserDataInputProvider();
 
-  /**
-   * <p>Constructor for View.</p>
-   */
+  /** Constructor for View. */
   public View() {}
 
-  /**
-   * <p>printOptions.</p>
-   */
+  /** printOptions. */
   protected void printOptions() {
     for (String option : options) {
       System.out.println(option);
@@ -36,31 +33,29 @@ public abstract class View {
   }
 
   /**
-   * <p>show.</p>
+   * show.
    *
    * @return a {@link by.epam.Lamashka.VinylShop.view.View} object
    */
   public abstract View show();
 
-  /**
-   * <p>userDataInput.</p>
-   *
-   * @return a {@link java.lang.String} object
-   */
-  protected abstract String userDataInput(Integer option);
+  protected String userDataInput(Integer option) {
+    UserDataInput userDataInput = userDataInputProvider.getUserDataInput(option);
+    return userDataInput.userInput();
+  }
 
   /**
-   * <p>userOptionsInput.</p>
+   * userOptionsInput.
    *
    * @return a {@link java.lang.Integer} object
    */
-  protected Integer userOptionsInput(){
+  protected Integer userOptionsInput() {
     String choice = " ";
     boolean correctChoice = false;
     while (choice != "0" && !correctChoice) {
       try {
         printOptions();
-        choice = in.next("[0-" + (options.length-1) + "]"); //must be (options.length-1)
+        choice = in.next("[0-" + (options.length - 1) + "]");
         correctChoice = true;
       } catch (Exception ex) {
         System.out.println("Enter an integer value between 0-" + (options.length - 1));
@@ -68,5 +63,6 @@ public abstract class View {
       }
     }
     return parseInt(choice);
-  };
+  }
+  ;
 }

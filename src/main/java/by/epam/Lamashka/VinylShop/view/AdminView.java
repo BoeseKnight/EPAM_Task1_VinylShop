@@ -1,23 +1,21 @@
 package by.epam.Lamashka.VinylShop.view;
 
 import by.epam.Lamashka.VinylShop.controller.Command.CommandName;
-import by.epam.Lamashka.VinylShop.view.userDataInput.UserDataInput;
 import by.epam.Lamashka.VinylShop.view.userDataInput.UserDataInputProvider;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * <p>AdminView class.</p>
+ * AdminView class.
  *
- * @author Asus
- * @version $Id: $Id
+ * @author Ilya Lamashka (BoeseKnight)
+ * @version 1.0
+ * @since 05-03-2022
  */
 public class AdminView extends View {
   private static Logger logger = LogManager.getLogger(AdminView.class);
-  private UserDataInputProvider userDataInputProvider=new UserDataInputProvider();
-  /**
-   * <p>Constructor for AdminView.</p>
-   */
+  private UserDataInputProvider userDataInputProvider = new UserDataInputProvider();
+  /** Constructor for AdminView. */
   public AdminView() {
     options =
         new String[] {
@@ -48,12 +46,5 @@ public class AdminView extends View {
       logger.info(response.getKey());
       return response.getValue();
     } else return null;
-  }
-
-  /** {@inheritDoc} */
-  @Override
-  protected String userDataInput(Integer option) {
-    UserDataInput userDataInput=userDataInputProvider.getUserDataInput(option);
-    return userDataInput.userInput();
   }
 }

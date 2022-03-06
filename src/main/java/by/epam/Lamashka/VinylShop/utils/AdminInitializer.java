@@ -5,8 +5,6 @@ import by.epam.Lamashka.VinylShop.dao.UserDAO;
 import by.epam.Lamashka.VinylShop.entity.User;
 import by.epam.Lamashka.VinylShop.entity.UserRole;
 
-import java.io.FileNotFoundException;
-
 /**
  * AdminInitializer class.
  *

@@ -2,9 +2,7 @@ package by.epam.Lamashka.VinylShop.service;
 
 import by.epam.Lamashka.VinylShop.entity.User;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 
 public interface UserService {
 

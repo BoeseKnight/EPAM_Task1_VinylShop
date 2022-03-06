@@ -1,13 +1,11 @@
 package by.epam.Lamashka.VinylShop.controller.Command;
 
-import by.epam.Lamashka.VinylShop.entity.UserRole;
 import by.epam.Lamashka.VinylShop.view.AdminView;
-import by.epam.Lamashka.VinylShop.view.CustomerView;
 import by.epam.Lamashka.VinylShop.view.View;
 import javafx.util.Pair;
 
 /**
- * <p>AddProductToShopCommand class.</p>
+ * AddProductToShopCommand class.
  *
  * @author Asus
  * @version $Id: $Id

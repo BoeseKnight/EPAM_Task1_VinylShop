@@ -1,26 +1,26 @@
 package by.epam.Lamashka.VinylShop.entity;
 
 import java.io.Serializable;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * <p>Product class.</p>
+ * Product class.
  *
  * @author Asus
  * @version $Id: $Id
  */
 public class Product implements Serializable {
+  private static final AtomicInteger count = new AtomicInteger(0);
   protected int productQuantity;
   protected float price;
   protected String productCode;
   protected String description;
 
-  /**
-   * <p>Constructor for Product.</p>
-   */
+  /** Constructor for Product. */
   public Product() {}
 
   /**
-   * <p>Constructor for Product.</p>
+   * Constructor for Product.
    *
    * @param productQuantity a int
    * @param price a float
@@ -34,8 +34,11 @@ public class Product implements Serializable {
     this.description = description;
   }
 
+  public static AtomicInteger getCount() {
+    return count;
+  }
   /**
-   * <p>Getter for the field <code>productQuantity</code>.</p>
+   * Getter for the field <code>productQuantity</code>.
    *
    * @return a int
    */
@@ -44,7 +47,7 @@ public class Product implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>productQuantity</code>.</p>
+   * Setter for the field <code>productQuantity</code>.
    *
    * @param productQuantity a int
    */
@@ -53,7 +56,7 @@ public class Product implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>price</code>.</p>
+   * Getter for the field <code>price</code>.
    *
    * @return a float
    */
@@ -62,7 +65,7 @@ public class Product implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>price</code>.</p>
+   * Setter for the field <code>price</code>.
    *
    * @param price a float
    */
@@ -71,7 +74,7 @@ public class Product implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>productCode</code>.</p>
+   * Getter for the field <code>productCode</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -80,7 +83,7 @@ public class Product implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>productCode</code>.</p>
+   * Setter for the field <code>productCode</code>.
    *
    * @param productCode a {@link java.lang.String} object
    */
@@ -89,7 +92,7 @@ public class Product implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>description</code>.</p>
+   * Getter for the field <code>description</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -98,7 +101,7 @@ public class Product implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>description</code>.</p>
+   * Setter for the field <code>description</code>.
    *
    * @param description a {@link java.lang.String} object
    */

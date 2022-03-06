@@ -4,7 +4,6 @@ import by.epam.Lamashka.VinylShop.Session;
 import by.epam.Lamashka.VinylShop.entity.UserRole;
 import by.epam.Lamashka.VinylShop.service.ServiceFactory;
 import by.epam.Lamashka.VinylShop.service.UserService;
-import by.epam.Lamashka.VinylShop.service.UserServiceImpl;
 import by.epam.Lamashka.VinylShop.view.AdminView;
 import by.epam.Lamashka.VinylShop.view.CustomerView;
 import by.epam.Lamashka.VinylShop.view.Menu;
@@ -12,7 +11,7 @@ import by.epam.Lamashka.VinylShop.view.View;
 import javafx.util.Pair;
 
 /**
- * <p>EmailChangeCommand class.</p>
+ * EmailChangeCommand class.
  *
  * @author Asus
  * @version $Id: $Id
@@ -23,7 +22,7 @@ public class EmailChangeCommand implements Command {
   /**
    * {@inheritDoc}
    *
-   * This method is used to execute Email Change command. Its main purpose is to change user's
+   * <p>This method is used to execute Email Change command. Its main purpose is to change user's
    * email. It checks if the user wrote its password correctly to perform this command. If password
    * is incorrect, the user will be back to its customer view. If password is correct, program will
    * check if the written password is available. If it's not in use command will be executed
@@ -36,7 +35,8 @@ public class EmailChangeCommand implements Command {
     String email = params[0];
     String password = params[1];
     System.out.println(session.getUser());
-    View nextView= (session.getUser().getRole()==UserRole.Admin) ? new AdminView() : new CustomerView();
+    View nextView =
+        (session.getUser().getRole() == UserRole.Admin) ? new AdminView() : new CustomerView();
     if (userService.login(session.getUser().getEmailAddress(), password) == null) {
       return new Pair<>("You have entered your password incorrectly.", nextView);
     }

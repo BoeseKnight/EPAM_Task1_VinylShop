@@ -1,7 +1,7 @@
 package by.epam.Lamashka.VinylShop.entity;
 
 /**
- * <p>OrderStatus class.</p>
+ * OrderStatus class.
  *
  * @author Asus
  * @version $Id: $Id

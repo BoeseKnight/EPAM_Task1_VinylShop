@@ -2,7 +2,6 @@ package by.epam.Lamashka.VinylShop.utils;
 
 import by.epam.Lamashka.VinylShop.dao.DAO;
 import by.epam.Lamashka.VinylShop.dao.DAOFactory;
-import by.epam.Lamashka.VinylShop.dao.SongDAO;
 import by.epam.Lamashka.VinylShop.entity.Song;
 import by.epam.Lamashka.VinylShop.entity.VinylProduct;
 import by.epam.Lamashka.VinylShop.entity.VinylRecord;
@@ -37,8 +36,8 @@ public class ProductsInitializer implements Initializer {
     while (in.hasNext()) {
       VinylProduct vinylProduct;
       in.next();
-      while (!in.hasNext("</VinylProduct>") ) {
-        List<VinylRecord> vinylRecordList=new ArrayList<>();
+      while (!in.hasNext("</VinylProduct>")) {
+        List<VinylRecord> vinylRecordList = new ArrayList<>();
         in.next();
         while (!in.hasNext("</VinylRecord>")) {
           List<Song> songsFromFile = new ArrayList<>();

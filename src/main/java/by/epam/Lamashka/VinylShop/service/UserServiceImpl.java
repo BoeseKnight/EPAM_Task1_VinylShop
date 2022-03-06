@@ -1,7 +1,5 @@
 package by.epam.Lamashka.VinylShop.service;
 
-import by.epam.Lamashka.VinylShop.DataSource;
-import by.epam.Lamashka.VinylShop.dao.DAO;
 import by.epam.Lamashka.VinylShop.dao.DAOFactory;
 import by.epam.Lamashka.VinylShop.dao.UserDAO;
 import by.epam.Lamashka.VinylShop.entity.User;
@@ -9,7 +7,6 @@ import by.epam.Lamashka.VinylShop.entity.User;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * UserService class.

@@ -13,7 +13,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * <p>ShowAllUsersCommand class.</p>
+ * ShowAllUsersCommand class.
  *
  * @author Asus
  * @version $Id: $Id

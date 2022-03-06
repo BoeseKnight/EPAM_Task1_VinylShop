@@ -2,23 +2,17 @@ package by.epam.Lamashka.VinylShop.view;
 
 import by.epam.Lamashka.VinylShop.controller.Controller;
 
-import java.util.Scanner;
-import java.util.regex.Pattern;
-
-import static java.lang.Integer.parseInt;
-
 /**
- * <p>Menu class.</p>
+ * Menu class.
  *
- * @author Asus
- * @version $Id: $Id
+ * @author Ilya Lamashka (BoeseKnight)
+ * @version 1.0
+ * @since 05-03-2022
  */
 public class Menu extends View {
   private static final Controller controller = new Controller();
 
-  /**
-   * <p>Constructor for Menu.</p>
-   */
+  /** Constructor for Menu. */
   public Menu() {
     options = new String[] {"1-LOGIN", "2-REGISTER", "0-EXIT"};
   }
@@ -39,5 +33,4 @@ public class Menu extends View {
   protected String userDataInput(Integer option) {
     return null;
   }
-
 }

@@ -2,23 +2,25 @@ package by.epam.Lamashka.VinylShop.entity;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * <p>Customer class.</p>
+ * Customer class.
  *
  * @author Asus
  * @version $Id: $Id
  */
 public class Customer extends User implements Serializable {
+  private static final AtomicInteger count = new AtomicInteger(0);
   private Address address;
-  private Basket basket;
+  private final Basket basket =new Basket();
   private List<Order> orders;
   private String firstName;
   private String lastName;
   private String mobilePhone;
 
   /**
-   * <p>Constructor for Customer.</p>
+   * Constructor for Customer.
    *
    * @param password a {@link java.lang.String} object
    * @param emailAddress a {@link java.lang.String} object
@@ -30,25 +32,31 @@ public class Customer extends User implements Serializable {
    * @param mobilePhone a {@link java.lang.String} object
    */
   public Customer(
-      String password,
       String emailAddress,
+      String password,
       Address address,
-      Basket basket,
       List<Order> orders,
       String firstName,
       String lastName,
       String mobilePhone) {
-    super(password, emailAddress);
+    super(emailAddress, password);
     this.address = address;
-    this.basket = basket;
     this.orders = orders;
     this.firstName = firstName;
     this.lastName = lastName;
     this.mobilePhone = mobilePhone;
   }
 
+  public Customer(String emailAddress, String password) {
+    super(emailAddress, password);
+  }
+
+  public static AtomicInteger getCount() {
+    return count;
+  }
+
   /**
-   * <p>Getter for the field <code>address</code>.</p>
+   * Getter for the field <code>address</code>.
    *
    * @return a {@link by.epam.Lamashka.VinylShop.entity.Address} object
    */
@@ -57,7 +65,7 @@ public class Customer extends User implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>address</code>.</p>
+   * Setter for the field <code>address</code>.
    *
    * @param address a {@link by.epam.Lamashka.VinylShop.entity.Address} object
    */
@@ -66,7 +74,7 @@ public class Customer extends User implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>basket</code>.</p>
+   * Getter for the field <code>basket</code>.
    *
    * @return a {@link by.epam.Lamashka.VinylShop.entity.Basket} object
    */
@@ -75,16 +83,7 @@ public class Customer extends User implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>basket</code>.</p>
-   *
-   * @param basket a {@link by.epam.Lamashka.VinylShop.entity.Basket} object
-   */
-  public void setBasket(Basket basket) {
-    this.basket = basket;
-  }
-
-  /**
-   * <p>Getter for the field <code>orders</code>.</p>
+   * Getter for the field <code>orders</code>.
    *
    * @return a {@link java.util.List} object
    */
@@ -93,7 +92,7 @@ public class Customer extends User implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>orders</code>.</p>
+   * Setter for the field <code>orders</code>.
    *
    * @param orders a {@link java.util.List} object
    */
@@ -102,7 +101,7 @@ public class Customer extends User implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>firstName</code>.</p>
+   * Getter for the field <code>firstName</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -111,7 +110,7 @@ public class Customer extends User implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>firstName</code>.</p>
+   * Setter for the field <code>firstName</code>.
    *
    * @param firstName a {@link java.lang.String} object
    */
@@ -120,7 +119,7 @@ public class Customer extends User implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>lastName</code>.</p>
+   * Getter for the field <code>lastName</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -129,7 +128,7 @@ public class Customer extends User implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>lastName</code>.</p>
+   * Setter for the field <code>lastName</code>.
    *
    * @param lastName a {@link java.lang.String} object
    */
@@ -138,7 +137,7 @@ public class Customer extends User implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>mobilePhone</code>.</p>
+   * Getter for the field <code>mobilePhone</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -147,7 +146,7 @@ public class Customer extends User implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>mobilePhone</code>.</p>
+   * Setter for the field <code>mobilePhone</code>.
    *
    * @param mobilePhone a {@link java.lang.String} object
    */

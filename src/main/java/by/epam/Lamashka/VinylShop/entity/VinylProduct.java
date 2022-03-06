@@ -2,6 +2,7 @@ package by.epam.Lamashka.VinylShop.entity;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * VinylProduct class.
@@ -10,6 +11,8 @@ import java.util.List;
  * @version $Id: $Id
  */
 public class VinylProduct extends Product implements Serializable {
+  private static final AtomicInteger count = new AtomicInteger(0);
+
   private List<VinylRecord> vinylRecords;
   private int vinylRecordsQuantity;
 
@@ -46,6 +49,26 @@ public class VinylProduct extends Product implements Serializable {
     super(productQuantity, price, productCode, description);
     this.vinylRecords = vinylRecords;
     this.vinylRecordsQuantity = vinylRecords.size();
+  }
+
+  public static AtomicInteger getCount() {
+    return count;
+  }
+
+  public List<VinylRecord> getVinylRecords() {
+    return vinylRecords;
+  }
+
+  public void setVinylRecords(List<VinylRecord> vinylRecords) {
+    this.vinylRecords = vinylRecords;
+  }
+
+  public int getVinylRecordsQuantity() {
+    return vinylRecordsQuantity;
+  }
+
+  public void setVinylRecordsQuantity(int vinylRecordsQuantity) {
+    this.vinylRecordsQuantity = vinylRecordsQuantity;
   }
 
   /** {@inheritDoc} */

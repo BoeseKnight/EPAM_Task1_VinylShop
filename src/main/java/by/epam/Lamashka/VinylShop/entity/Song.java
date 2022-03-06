@@ -1,28 +1,29 @@
 package by.epam.Lamashka.VinylShop.entity;
 
 import java.io.Serializable;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * <p>Song class.</p>
+ * Song class.
  *
  * @author Asus
  * @version $Id: $Id
  */
 public class Song implements Serializable {
+  private static final AtomicInteger count = new AtomicInteger(0);
+
   private String songName;
   private String artist;
   private String songDuration;
 
-  /**
-   * <p>Constructor for Song.</p>
-   */
+  /** Constructor for Song. */
   public Song() {
     this.songName = "Unknown";
     this.songDuration = "00:00";
   }
 
   /**
-   * <p>Constructor for Song.</p>
+   * Constructor for Song.
    *
    * @param songName a {@link java.lang.String} object
    */
@@ -32,7 +33,7 @@ public class Song implements Serializable {
   }
 
   /**
-   * <p>Constructor for Song.</p>
+   * Constructor for Song.
    *
    * @param songName a {@link java.lang.String} object
    * @param artist a {@link java.lang.String} object
@@ -44,8 +45,11 @@ public class Song implements Serializable {
     this.artist = artist;
   }
 
+  public static AtomicInteger getCount() {
+    return count;
+  }
   /**
-   * <p>Getter for the field <code>songName</code>.</p>
+   * Getter for the field <code>songName</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -54,7 +58,7 @@ public class Song implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>songName</code>.</p>
+   * Setter for the field <code>songName</code>.
    *
    * @param songName a {@link java.lang.String} object
    */
@@ -63,7 +67,7 @@ public class Song implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>songDuration</code>.</p>
+   * Getter for the field <code>songDuration</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -72,7 +76,7 @@ public class Song implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>songDuration</code>.</p>
+   * Setter for the field <code>songDuration</code>.
    *
    * @param songDuration a {@link java.lang.String} object
    */
@@ -81,7 +85,7 @@ public class Song implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>artist</code>.</p>
+   * Getter for the field <code>artist</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -90,7 +94,7 @@ public class Song implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>artist</code>.</p>
+   * Setter for the field <code>artist</code>.
    *
    * @param artist a {@link java.lang.String} object
    */

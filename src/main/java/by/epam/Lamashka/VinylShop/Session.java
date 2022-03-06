@@ -1,23 +1,25 @@
 package by.epam.Lamashka.VinylShop;
 
+import by.epam.Lamashka.VinylShop.entity.Customer;
 import by.epam.Lamashka.VinylShop.entity.User;
 
 /**
- * <p>Session class.</p>
+ * Session class.
  *
- * @author Asus
- * @version $Id: $Id
+ * @author Ilya Lamashka (BoeseKnight)
+ * @version 1.0
+ * @since 05-03-2022
  */
 public class Session {
   private static final Session instance = new Session();
   private User user;
-
+  private Customer customer;
   private Session() {
     user = null;
   }
 
   /**
-   * <p>Getter for the field <code>instance</code>.</p>
+   * Getter for the field <code>instance</code>.
    *
    * @return a {@link by.epam.Lamashka.VinylShop.Session} object
    */
@@ -26,7 +28,7 @@ public class Session {
   }
 
   /**
-   * <p>Getter for the field <code>user</code>.</p>
+   * Getter for the field <code>user</code>.
    *
    * @return a {@link by.epam.Lamashka.VinylShop.entity.User} object
    */
@@ -34,11 +36,19 @@ public class Session {
     return user;
   }
   /**
-   * <p>Setter for the field <code>user</code>.</p>
+   * Setter for the field <code>user</code>.
    *
    * @param user a {@link by.epam.Lamashka.VinylShop.entity.User} object
    */
-  public void setUser(User user){
-    this.user=user;
+  public void setUser(User user) {
+    this.user = user;
+  }
+
+  public Customer getCustomer() {
+    return customer;
+  }
+
+  public void setCustomer(Customer customer) {
+    this.customer = customer;
   }
 }
