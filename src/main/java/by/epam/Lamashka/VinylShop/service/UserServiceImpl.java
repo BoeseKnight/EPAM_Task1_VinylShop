@@ -12,16 +12,21 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * <p>UserService class.</p>
+ * UserService class.
  *
  * @author Asus
  * @version $Id: $Id
  */
 public class UserServiceImpl implements UserService {
-  private static final UserDAO userDAO = DAOFactory.getInstance().getUserDAO();
+  private UserDAO userDAO = DAOFactory.getInstance().getUserDAO();
 
+  public UserServiceImpl() {}
+
+  public UserServiceImpl(UserDAO userDAO) {
+    this.userDAO = userDAO;
+  }
   /**
-   * <p>login.</p>
+   * login.
    *
    * @param email a {@link java.lang.String} object
    * @param password a {@link java.lang.String} object
@@ -34,7 +39,7 @@ public class UserServiceImpl implements UserService {
   }
 
   /**
-   * <p>register.</p>
+   * register.
    *
    * @param email a {@link java.lang.String} object
    * @param password a {@link java.lang.String} object
@@ -42,17 +47,18 @@ public class UserServiceImpl implements UserService {
    */
   @Override
   public User register(String email, String password) {
-    User user = userDAO.findByEmail(email);
-    if (user != null) {
+    User userToFind = userDAO.findByEmail(email);
+    if (userToFind != null) {
       return null;
     } else {
-      userDAO.save(new User(email, password));
-      return userDAO.get(userDAO.getAll().size() - 1);
+      User user = new User(email, password);
+      userDAO.save(user);
+      return user;
     }
   }
 
   /**
-   * <p>changePassword.</p>
+   * changePassword.
    *
    * @param email a {@link java.lang.String} object
    * @param password a {@link java.lang.String} object
@@ -61,15 +67,17 @@ public class UserServiceImpl implements UserService {
   @Override
   public User changePassword(String email, String password) {
     User user = userDAO.findByEmail(email);
-    if (user != null) {
+    if (!user.getPassword().equals(password)) {
       user.setPassword(password);
       userDAO.update(user);
       return user;
-    } else return null;
+    } else {
+      return null;
+    }
   }
 
   /**
-   * <p>changeEmail.</p>
+   * changeEmail.
    *
    * @param oldEmail a {@link java.lang.String} object
    * @param password a {@link java.lang.String} object
@@ -77,19 +85,17 @@ public class UserServiceImpl implements UserService {
    * @return a {@link by.epam.Lamashka.VinylShop.entity.User} object
    */
   @Override
-  public User changeEmail(String oldEmail, String password, String newEmail) {
+  public User changeEmail(String oldEmail, String newEmail, String password) {
     User user = userDAO.findByEmail(oldEmail);
     if (userDAO.findByEmail(newEmail) == null) {
       user.setEmailAddress(newEmail);
       userDAO.update(user);
       return user;
-    }
-    else return null;
-
+    } else return null;
   }
 
   /**
-   * <p>usersSort.</p>
+   * usersSort.
    *
    * @return a {@link java.util.Collection} object
    */

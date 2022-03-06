@@ -40,7 +40,7 @@ public class EmailChangeCommand implements Command {
     if (userService.login(session.getUser().getEmailAddress(), password) == null) {
       return new Pair<>("You have entered your password incorrectly.", nextView);
     }
-    if (userService.changeEmail(session.getUser().getEmailAddress(), password, email) != null) {
+    if (userService.changeEmail(session.getUser().getEmailAddress(), email, password) != null) {
       return new Pair("EMAIL WAS CHANGED", new Menu());
     } else return new Pair<>("This email is already taken.", nextView);
   }
