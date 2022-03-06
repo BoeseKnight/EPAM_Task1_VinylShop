@@ -35,9 +35,9 @@ public class Menu extends View {
     return null;
   }
 
-  /** {@inheritDoc} */
   @Override
-  protected String userDataInput() {
+  protected String userDataInput(Integer option) {
     return null;
   }
+
 }

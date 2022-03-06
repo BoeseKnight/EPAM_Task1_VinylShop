@@ -1,6 +1,8 @@
 package by.epam.Lamashka.VinylShop.view;
 
 import by.epam.Lamashka.VinylShop.controller.Command.CommandName;
+import by.epam.Lamashka.VinylShop.view.userDataInput.UserDataInput;
+import by.epam.Lamashka.VinylShop.view.userDataInput.UserDataInputProvider;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,7 +14,7 @@ import org.apache.logging.log4j.Logger;
  */
 public class AdminView extends View {
   private static Logger logger = LogManager.getLogger(AdminView.class);
-
+  private UserDataInputProvider userDataInputProvider=new UserDataInputProvider();
   /**
    * <p>Constructor for AdminView.</p>
    */
@@ -40,7 +42,7 @@ public class AdminView extends View {
     Integer option = userOptionsInput();
     if (option != 0) {
       if (option == 1 || option == 2) {
-        commandParameters = userDataInput();
+        commandParameters = userDataInput(option);
       }
       response = controller.executeCommand(CommandName.values()[option + 1], commandParameters);
       logger.info(response.getKey());
@@ -50,7 +52,8 @@ public class AdminView extends View {
 
   /** {@inheritDoc} */
   @Override
-  protected String userDataInput() {
-    return EmailPasswordInput.userInput();
+  protected String userDataInput(Integer option) {
+    UserDataInput userDataInput=userDataInputProvider.getUserDataInput(option);
+    return userDataInput.userInput();
   }
 }

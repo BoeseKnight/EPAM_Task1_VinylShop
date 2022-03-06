@@ -1,25 +1,23 @@
 package by.epam.Lamashka.VinylShop.view;
 
 import by.epam.Lamashka.VinylShop.controller.Command.CommandName;
+import by.epam.Lamashka.VinylShop.view.userDataInput.UserDataInput;
+import by.epam.Lamashka.VinylShop.view.userDataInput.UserDataInputProvider;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
 
 /**
- * <p>CustomerView class.</p>
+ * CustomerView class.
  *
  * @author Asus
  * @version $Id: $Id
  */
 public class CustomerView extends View {
-  private static Logger logger = LogManager.getLogger(CustomerView.class);
+  private Logger logger = LogManager.getLogger(CustomerView.class);
 
-  /**
-   * <p>Constructor for CustomerView.</p>
-   */
+  /** Constructor for CustomerView. */
   public CustomerView() {
     options =
         new String[] {
@@ -40,8 +38,8 @@ public class CustomerView extends View {
     logger.info("Customer menu");
     Integer option = userOptionsInput();
     if (option != 0) {
-      if (option == 1 || option == 2) {
-        commandParameters = userDataInput();
+      if (option == 1 || option == 2 || option==3) {
+        commandParameters = userDataInput(option+2);
       }
       response = controller.executeCommand(CommandName.values()[option + 1], commandParameters);
       logger.info(response.getKey());
@@ -51,7 +49,8 @@ public class CustomerView extends View {
 
   /** {@inheritDoc} */
   @Override
-  protected String userDataInput() {
-    return EmailPasswordInput.userInput();
+  protected String userDataInput(Integer option) {
+    UserDataInput userDataInput = userDataInputProvider.getUserDataInput(option);
+    return userDataInput.userInput();
   }
 }

@@ -4,7 +4,6 @@ import by.epam.Lamashka.VinylShop.Session;
 import by.epam.Lamashka.VinylShop.entity.UserRole;
 import by.epam.Lamashka.VinylShop.service.ServiceFactory;
 import by.epam.Lamashka.VinylShop.service.UserService;
-import by.epam.Lamashka.VinylShop.service.UserServiceImpl;
 import by.epam.Lamashka.VinylShop.view.AdminView;
 import by.epam.Lamashka.VinylShop.view.CustomerView;
 import by.epam.Lamashka.VinylShop.view.Menu;
@@ -29,12 +28,16 @@ public class PasswordChangeCommand implements Command {
   @Override
   public Pair<String, View> execute(String parameters) {
     String[] params = parameters.split(" ");
-    String email = params[0];
-    String password = params[1];
+    String currentPassword = params[0];
+    String newPassword = params[1];
+
     System.out.println(session.getUser());
     View nextView =
         (session.getUser().getRole() == UserRole.Admin) ? new AdminView() : new CustomerView();
-    if (userService.changePassword(session.getUser().getEmailAddress(), password) == null) {
+    if (!session.getUser().getPassword().equals(currentPassword)){
+      return new Pair<>("YOU'VE ENTERED YOUR CURRENT PASSWORD INCORRECTLY!", nextView);
+    }
+    if (userService.changePassword(session.getUser().getEmailAddress(), newPassword) == null) {
       return new Pair<>("YOU'VE ENTERED YOUR CURRENT PASSWORD!", nextView);
     } else {
       return new Pair<>("PASSWORD WAS CHANGED", new Menu());

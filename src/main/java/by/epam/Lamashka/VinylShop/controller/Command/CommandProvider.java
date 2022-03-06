@@ -25,7 +25,7 @@ public class CommandProvider {
     commands.put(CommandName.ADD_PRODUCT_TO_SHOP, new AddProductToShopCommand());
     commands.put(CommandName.DELETE_PRODUCT_FROM_BASKET, new DeleteProductFromBasket());
     commands.put(CommandName.DELETE_PRODUCT_FROM_SHOP, new DeleteProductFromShopCommand());
-    commands.put(CommandName.SHOW_ALL_PRODUCTS, new ShowAllProducts());
+    commands.put(CommandName.SHOW_ALL_PRODUCTS, new ShowAllProductsCommand());
     commands.put(CommandName.SHOW_ALL_USERS, new ShowAllUsersCommand());
     commands.put(CommandName.CHECKOUT, new CheckoutCommand());
   }

@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * <p>User class.</p>
+ * User class.
  *
  * @author Asus
  * @version $Id: $Id
@@ -14,17 +14,15 @@ public class User implements Serializable, Comparable<User> {
   private static final AtomicInteger count = new AtomicInteger(0);
   private String emailAddress;
   private String password;
-
+  private UserRole role;
   /** {@inheritDoc} */
   @Override
   public int compareTo(User o) {
     return emailAddress.compareTo(o.getEmailAddress());
   }
 
-  private UserRole role;
-
   /**
-   * <p>Constructor for User.</p>
+   * Constructor for User.
    *
    * @param emailAddress a {@link java.lang.String} object
    * @param password a {@link java.lang.String} object
@@ -37,7 +35,7 @@ public class User implements Serializable, Comparable<User> {
   }
 
   /**
-   * <p>Constructor for User.</p>
+   * Constructor for User.
    *
    * @param emailAddress a {@link java.lang.String} object
    * @param password a {@link java.lang.String} object
@@ -50,7 +48,7 @@ public class User implements Serializable, Comparable<User> {
   }
 
   /**
-   * <p>Getter for the field <code>count</code>.</p>
+   * Getter for the field <code>count</code>.
    *
    * @return a {@link java.util.concurrent.atomic.AtomicInteger} object
    */
@@ -59,7 +57,7 @@ public class User implements Serializable, Comparable<User> {
   }
 
   /**
-   * <p>Getter for the field <code>password</code>.</p>
+   * Getter for the field <code>password</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -68,7 +66,7 @@ public class User implements Serializable, Comparable<User> {
   }
 
   /**
-   * <p>Setter for the field <code>password</code>.</p>
+   * Setter for the field <code>password</code>.
    *
    * @param password a {@link java.lang.String} object
    */
@@ -77,7 +75,7 @@ public class User implements Serializable, Comparable<User> {
   }
 
   /**
-   * <p>Getter for the field <code>emailAddress</code>.</p>
+   * Getter for the field <code>emailAddress</code>.
    *
    * @return a {@link java.lang.String} object
    */
@@ -86,7 +84,7 @@ public class User implements Serializable, Comparable<User> {
   }
 
   /**
-   * <p>Setter for the field <code>emailAddress</code>.</p>
+   * Setter for the field <code>emailAddress</code>.
    *
    * @param emailAddress a {@link java.lang.String} object
    */
@@ -95,7 +93,7 @@ public class User implements Serializable, Comparable<User> {
   }
 
   /**
-   * <p>Getter for the field <code>role</code>.</p>
+   * Getter for the field <code>role</code>.
    *
    * @return a {@link by.epam.Lamashka.VinylShop.entity.UserRole} object
    */
@@ -104,7 +102,7 @@ public class User implements Serializable, Comparable<User> {
   }
 
   /**
-   * <p>Setter for the field <code>role</code>.</p>
+   * Setter for the field <code>role</code>.
    *
    * @param role a {@link by.epam.Lamashka.VinylShop.entity.UserRole} object
    */

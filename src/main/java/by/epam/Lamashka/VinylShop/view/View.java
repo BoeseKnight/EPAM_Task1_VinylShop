@@ -1,6 +1,7 @@
 package by.epam.Lamashka.VinylShop.view;
 
 import by.epam.Lamashka.VinylShop.controller.Controller;
+import by.epam.Lamashka.VinylShop.view.userDataInput.UserDataInputProvider;
 import javafx.util.Pair;
 
 import java.util.Scanner;
@@ -18,6 +19,8 @@ public abstract class View {
   protected Controller controller = new Controller();
   protected String options[];
   protected final Scanner in = new Scanner(System.in);
+  protected final UserDataInputProvider userDataInputProvider=new UserDataInputProvider();
+
   /**
    * <p>Constructor for View.</p>
    */
@@ -44,7 +47,7 @@ public abstract class View {
    *
    * @return a {@link java.lang.String} object
    */
-  protected abstract String userDataInput();
+  protected abstract String userDataInput(Integer option);
 
   /**
    * <p>userOptionsInput.</p>

@@ -13,7 +13,7 @@ import javafx.util.Pair;
  * @author Asus
  * @version $Id: $Id
  */
-public class ShowAllProducts implements Command {
+public class ShowAllProductsCommand implements Command {
   /** {@inheritDoc} */
   @Override
   public Pair<String, View> execute(String parameters) {

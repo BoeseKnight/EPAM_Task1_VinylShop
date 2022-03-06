@@ -2,6 +2,7 @@ package by.epam.Lamashka.VinylShop.view;
 
 import by.epam.Lamashka.VinylShop.controller.Command.CommandName;
 import by.epam.Lamashka.VinylShop.controller.Command.LoginCommand;
+import by.epam.Lamashka.VinylShop.view.userDataInput.UserDataInput;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -34,7 +35,7 @@ public class AuthorizationView extends View {
   @Override
   public View show() {
     logger.info("LOGIN MENU");
-    String commandParameters = userDataInput();
+    String commandParameters = userDataInput(1);
     response = controller.executeCommand(CommandName.LOGIN, commandParameters);
     logger.info(response.getKey());
     return response.getValue();
@@ -42,7 +43,8 @@ public class AuthorizationView extends View {
 
   /** {@inheritDoc} */
   @Override
-  protected String userDataInput() {
-    return EmailPasswordInput.userInput();
+  protected String userDataInput(Integer option) {
+    UserDataInput userDataInput=userDataInputProvider.getUserDataInput(option);
+    return userDataInput.userInput();
   }
 }
