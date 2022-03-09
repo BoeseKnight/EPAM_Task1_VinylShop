@@ -1,6 +1,7 @@
 package by.epam.Lamashka.VinylShop.entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -11,10 +12,13 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class Song implements Serializable {
   private static final AtomicInteger count = new AtomicInteger(0);
-
   private String songName;
   private String artist;
   private String songDuration;
+
+  {
+    count.incrementAndGet();
+  }
 
   /** Constructor for Song. */
   public Song() {
@@ -100,6 +104,21 @@ public class Song implements Serializable {
    */
   public void setArtist(String artist) {
     this.artist = artist;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Song song = (Song) o;
+    return Objects.equals(songName, song.songName)
+        && Objects.equals(artist, song.artist)
+        && Objects.equals(songDuration, song.songDuration);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(songName, artist, songDuration);
   }
 
   /** {@inheritDoc} */

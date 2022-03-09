@@ -2,6 +2,7 @@ package by.epam.Lamashka.VinylShop.entity;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -18,6 +19,10 @@ public class VinylRecord implements Serializable {
   private String albumName;
   private String genre;
   private String releaseDate;
+
+  {
+    count.incrementAndGet();
+  }
 
   /** Constructor for VinylRecord. */
   public VinylRecord() {}
@@ -144,6 +149,23 @@ public class VinylRecord implements Serializable {
    */
   public void setReleaseDate(String releaseDate) {
     this.releaseDate = releaseDate;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    VinylRecord that = (VinylRecord) o;
+    return Objects.equals(songs, that.songs)
+        && Objects.equals(artist, that.artist)
+        && Objects.equals(albumName, that.albumName)
+        && Objects.equals(genre, that.genre)
+        && Objects.equals(releaseDate, that.releaseDate);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(songs, artist, albumName, genre, releaseDate);
   }
 
   @Override

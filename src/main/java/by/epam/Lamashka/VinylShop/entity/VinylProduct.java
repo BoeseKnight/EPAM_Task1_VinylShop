@@ -2,6 +2,7 @@ package by.epam.Lamashka.VinylShop.entity;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -15,6 +16,10 @@ public class VinylProduct extends Product implements Serializable {
 
   private List<VinylRecord> vinylRecords;
   private int vinylRecordsQuantity;
+
+  {
+    count.incrementAndGet();
+  }
 
   /** Constructor for VinylProduct. */
   public VinylProduct() {}
@@ -69,6 +74,20 @@ public class VinylProduct extends Product implements Serializable {
 
   public void setVinylRecordsQuantity(int vinylRecordsQuantity) {
     this.vinylRecordsQuantity = vinylRecordsQuantity;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    VinylProduct product = (VinylProduct) o;
+    return vinylRecordsQuantity == product.vinylRecordsQuantity
+        && Objects.equals(vinylRecords, product.vinylRecords);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(vinylRecords, vinylRecordsQuantity);
   }
 
   /** {@inheritDoc} */

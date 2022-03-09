@@ -1,7 +1,10 @@
 package by.epam.Lamashka.VinylShop;
 
-import by.epam.Lamashka.VinylShop.entity.User;
-import by.epam.Lamashka.VinylShop.utils.*;
+import by.epam.Lamashka.VinylShop.entity.*;
+import by.epam.Lamashka.VinylShop.utils.DataSourceInitializer;
+import by.epam.Lamashka.VinylShop.utils.Initializer;
+import by.epam.Lamashka.VinylShop.utils.ProductsInitializer;
+import by.epam.Lamashka.VinylShop.utils.ShopSerialization;
 import by.epam.Lamashka.VinylShop.view.Menu;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,13 +34,18 @@ public class Main {
   public static void main(String[] args) throws FileNotFoundException {
     Initializer dataSource = new DataSourceInitializer();
     dataSource.initialize();
-    Initializer admin = new AdminInitializer();
-    admin.initialize();
-    Initializer products = new ProductsInitializer();
-    products.initialize();
+
     Menu menu = new Menu();
     menu.show();
     logger.info("Number of created users: " + User.getCount());
+    logger.info("Number of created products: " + Product.getCount());
+    logger.info("Number of created records: " + VinylRecord.getCount());
+    logger.info("Number of created songs: " + Song.getCount());
+    logger.info("Number of created addresses: " + Address.getCount());
+    logger.info("Number of created customers: " + Customer.getCount());
+    logger.info("Number of created orders: " + Order.getCount());
+    logger.info("Number of created baskets: " + Basket.getCount());
+
     ShopSerialization.serialize();
   }
 }

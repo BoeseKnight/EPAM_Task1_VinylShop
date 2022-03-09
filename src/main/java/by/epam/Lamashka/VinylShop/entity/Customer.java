@@ -2,6 +2,7 @@ package by.epam.Lamashka.VinylShop.entity;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -11,21 +12,27 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @version $Id: $Id
  */
 public class Customer extends User implements Serializable {
-  private static final AtomicInteger count = new AtomicInteger(0);
   private Address address;
-  private final Basket basket =new Basket();
+  private final Basket basket = new Basket();
   private List<Order> orders;
   private String firstName;
   private String lastName;
   private String mobilePhone;
+  private static final AtomicInteger count = new AtomicInteger(0);
 
+  {
+    count.incrementAndGet();
+  }
+
+  public static AtomicInteger getCount() {
+    return count;
+  }
   /**
    * Constructor for Customer.
    *
    * @param password a {@link java.lang.String} object
    * @param emailAddress a {@link java.lang.String} object
    * @param address a {@link by.epam.Lamashka.VinylShop.entity.Address} object
-   * @param basket a {@link by.epam.Lamashka.VinylShop.entity.Basket} object
    * @param orders a {@link java.util.List} object
    * @param firstName a {@link java.lang.String} object
    * @param lastName a {@link java.lang.String} object
@@ -49,10 +56,6 @@ public class Customer extends User implements Serializable {
 
   public Customer(String emailAddress, String password) {
     super(emailAddress, password);
-  }
-
-  public static AtomicInteger getCount() {
-    return count;
   }
 
   /**
@@ -152,5 +155,46 @@ public class Customer extends User implements Serializable {
    */
   public void setMobilePhone(String mobilePhone) {
     this.mobilePhone = mobilePhone;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    if (!super.equals(o)) return false;
+    Customer customer = (Customer) o;
+    return Objects.equals(address, customer.address)
+        && Objects.equals(basket, customer.basket)
+        && Objects.equals(orders, customer.orders)
+        && Objects.equals(firstName, customer.firstName)
+        && Objects.equals(lastName, customer.lastName)
+        && Objects.equals(mobilePhone, customer.mobilePhone);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+        super.hashCode(), address, basket, orders, firstName, lastName, mobilePhone);
+  }
+
+  @Override
+  public String toString() {
+    return "Customer{"
+        + "address="
+        + address
+        + ", basket="
+        + basket
+        + ", orders="
+        + orders
+        + ", firstName='"
+        + firstName
+        + '\''
+        + ", lastName='"
+        + lastName
+        + '\''
+        + ", mobilePhone='"
+        + mobilePhone
+        + '\''
+        + '}';
   }
 }

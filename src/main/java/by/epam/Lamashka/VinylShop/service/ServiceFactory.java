@@ -10,7 +10,7 @@ public class ServiceFactory {
   private static final ServiceFactory instance = new ServiceFactory();
   private final UserService userServiceImpl = new UserServiceImpl();
   private final VinylProductService vinylProductService = new VinylProductServiceImpl();
-  private final CustomerService customerService=new CustomerServiceImpl();
+  private final CustomerService customerService = new CustomerServiceImpl();
 
   private ServiceFactory() {}
 

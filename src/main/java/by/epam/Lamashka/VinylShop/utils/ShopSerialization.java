@@ -1,7 +1,10 @@
 package by.epam.Lamashka.VinylShop.utils;
 
 import by.epam.Lamashka.VinylShop.DataSource;
+import by.epam.Lamashka.VinylShop.Main;
 import by.epam.Lamashka.VinylShop.Shop;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -9,10 +12,17 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 public class ShopSerialization {
+  private static Logger logger = LogManager.getLogger(ShopSerialization.class);
+
   public static void serialize() {
     Shop shop = new Shop();
-    System.out.println(DataSource.getInstance().getUsers());
+    logger.info("Serialized Data:");
+    logger.info(DataSource.getInstance().getUsers());
     shop.setUsers(DataSource.getInstance().getUsers());
+    logger.info(DataSource.getInstance().getVinylRecords());
+    shop.setVinylRecords(DataSource.getInstance().getVinylRecords());
+    logger.info(DataSource.getInstance().getVinylRecords());
+    shop.setVinylProducts(DataSource.getInstance().getVinylProducts());
     FileOutputStream outputStream = null;
     try {
       outputStream = new FileOutputStream("save.ser");
@@ -25,9 +35,6 @@ public class ShopSerialization {
       objectOutputStream.writeObject(shop);
       objectOutputStream.close();
       outputStream.close();
-      System.out.println(shop.hashCode());
-      System.out.println(shop);
-
     } catch (IOException e) {
       e.printStackTrace();
     }

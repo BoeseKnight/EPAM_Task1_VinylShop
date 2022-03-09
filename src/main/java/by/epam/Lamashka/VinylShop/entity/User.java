@@ -15,6 +15,10 @@ public class User implements Serializable, Comparable<User> {
   private String emailAddress;
   private String password;
   private UserRole role;
+
+  {
+    count.incrementAndGet();
+  }
   /** {@inheritDoc} */
   @Override
   public int compareTo(User o) {
@@ -31,7 +35,6 @@ public class User implements Serializable, Comparable<User> {
     this.role = UserRole.User;
     this.password = password;
     this.emailAddress = emailAddress;
-    count.incrementAndGet();
   }
 
   /**
@@ -110,19 +113,19 @@ public class User implements Serializable, Comparable<User> {
     this.role = role;
   }
 
-  /** {@inheritDoc} */
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     User user = (User) o;
-    return password.equals(user.password) && emailAddress.equals(user.emailAddress);
+    return Objects.equals(emailAddress, user.emailAddress)
+        && Objects.equals(password, user.password)
+        && role == user.role;
   }
 
-  /** {@inheritDoc} */
   @Override
   public int hashCode() {
-    return Objects.hash(password, emailAddress);
+    return Objects.hash(emailAddress, password, role);
   }
 
   /** {@inheritDoc} */

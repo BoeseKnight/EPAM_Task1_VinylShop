@@ -44,9 +44,9 @@ public class VinylProductDAO implements DAO<VinylProduct> {
   @Override
   public VinylProduct get(int id) {
     VinylProduct product;
-    try{
-    product=vinylProducts.get(id);
-    }catch(Exception e){
+    try {
+      product = vinylProducts.get(id);
+    } catch (Exception e) {
       return null;
     }
     return product;

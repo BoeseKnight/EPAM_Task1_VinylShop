@@ -2,7 +2,6 @@ package by.epam.Lamashka.VinylShop.service;
 
 import by.epam.Lamashka.VinylShop.dao.DAO;
 import by.epam.Lamashka.VinylShop.dao.DAOFactory;
-import by.epam.Lamashka.VinylShop.entity.Product;
 import by.epam.Lamashka.VinylShop.entity.VinylProduct;
 
 import java.util.ArrayList;
@@ -23,6 +22,6 @@ public class VinylProductServiceImpl implements VinylProductService {
 
   @Override
   public VinylProduct getProduct(int id) {
-    return vinylProductDAO.get(id-1);
+    return vinylProductDAO.get(id - 1);
   }
 }

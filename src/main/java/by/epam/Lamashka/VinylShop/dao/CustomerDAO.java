@@ -2,7 +2,6 @@ package by.epam.Lamashka.VinylShop.dao;
 
 import by.epam.Lamashka.VinylShop.DataSource;
 import by.epam.Lamashka.VinylShop.entity.Customer;
-import by.epam.Lamashka.VinylShop.entity.User;
 
 import java.util.Collection;
 import java.util.List;
@@ -34,9 +33,13 @@ public class CustomerDAO implements DAO<Customer> {
   public Customer get(int id) {
     return customers.get(id);
   }
+
   public Customer findByEmail(String email) {
     Customer customerToFind =
-            customers.stream().filter(user -> email.equals(user.getEmailAddress())).findAny().orElse(null);
+        customers.stream()
+            .filter(user -> email.equals(user.getEmailAddress()))
+            .findAny()
+            .orElse(null);
     return customerToFind;
   }
 }

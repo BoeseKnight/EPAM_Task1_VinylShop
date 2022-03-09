@@ -1,6 +1,7 @@
 package by.epam.Lamashka.VinylShop.entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -10,11 +11,15 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @version $Id: $Id
  */
 public class Address implements Serializable {
-  private static final AtomicInteger count = new AtomicInteger(0);
   private String addressLine;
   private String postcode;
   private String country;
   private String city;
+  private static final AtomicInteger count = new AtomicInteger(0);
+
+  {
+    count.incrementAndGet();
+  }
 
   public static AtomicInteger getCount() {
     return count;
@@ -89,5 +94,39 @@ public class Address implements Serializable {
    */
   public void setCity(String city) {
     this.city = city;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Address address = (Address) o;
+    return Objects.equals(addressLine, address.addressLine)
+        && Objects.equals(postcode, address.postcode)
+        && Objects.equals(country, address.country)
+        && Objects.equals(city, address.city);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(addressLine, postcode, country, city);
+  }
+
+  @Override
+  public String toString() {
+    return "Address{"
+        + "addressLine='"
+        + addressLine
+        + '\''
+        + ", postcode='"
+        + postcode
+        + '\''
+        + ", country='"
+        + country
+        + '\''
+        + ", city='"
+        + city
+        + '\''
+        + '}';
   }
 }

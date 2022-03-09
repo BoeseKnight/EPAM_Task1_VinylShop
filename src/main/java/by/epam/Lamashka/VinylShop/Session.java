@@ -14,6 +14,7 @@ public class Session {
   private static final Session instance = new Session();
   private User user;
   private Customer customer;
+
   private Session() {
     user = null;
   }

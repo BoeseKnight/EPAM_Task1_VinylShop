@@ -12,7 +12,6 @@ public class UserDataInputProvider {
     userDataInputMap.put(3, new PasswordChangeInput());
     userDataInputMap.put(4, new EmailChangeInput());
     userDataInputMap.put(6, new ProductChoiceInput());
-
   }
 
   public UserDataInput getUserDataInput(Integer parameters) {

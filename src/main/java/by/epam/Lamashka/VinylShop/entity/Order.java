@@ -1,6 +1,7 @@
 package by.epam.Lamashka.VinylShop.entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -16,9 +17,14 @@ public class Order implements Serializable {
   private OrderStatus orderStatus;
   private float sum;
 
+  {
+    count.incrementAndGet();
+  }
+
   public static AtomicInteger getCount() {
     return count;
   }
+
   /**
    * Getter for the field <code>orderNumber</code>.
    *
@@ -89,5 +95,37 @@ public class Order implements Serializable {
    */
   public void setSum(float sum) {
     this.sum = sum;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Order order = (Order) o;
+    return Float.compare(order.sum, sum) == 0
+        && Objects.equals(orderNumber, order.orderNumber)
+        && Objects.equals(orderDate, order.orderDate)
+        && orderStatus == order.orderStatus;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(orderNumber, orderDate, orderStatus, sum);
+  }
+
+  @Override
+  public String toString() {
+    return "Order{"
+        + "orderNumber='"
+        + orderNumber
+        + '\''
+        + ", orderDate='"
+        + orderDate
+        + '\''
+        + ", orderStatus="
+        + orderStatus
+        + ", sum="
+        + sum
+        + '}';
   }
 }
